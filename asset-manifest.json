@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/JPSS14/react-books-2/static/css/main.073c9b0a.css",
-    "main.js": "/JPSS14/react-books-2/static/js/main.a99a30e4.js",
-    "static/js/787.558a8ad1.chunk.js": "/JPSS14/react-books-2/static/js/787.558a8ad1.chunk.js",
-    "static/media/logo.svg": "/JPSS14/react-books-2/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/JPSS14/react-books-2/index.html",
-    "main.073c9b0a.css.map": "/JPSS14/react-books-2/static/css/main.073c9b0a.css.map",
-    "main.a99a30e4.js.map": "/JPSS14/react-books-2/static/js/main.a99a30e4.js.map",
-    "787.558a8ad1.chunk.js.map": "/JPSS14/react-books-2/static/js/787.558a8ad1.chunk.js.map"
+    "main.css": "/react-books-2/static/css/main.073c9b0a.css",
+    "main.js": "/react-books-2/static/js/main.6f540891.js",
+    "static/js/787.558a8ad1.chunk.js": "/react-books-2/static/js/787.558a8ad1.chunk.js",
+    "static/media/logo.svg": "/react-books-2/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/react-books-2/index.html",
+    "main.073c9b0a.css.map": "/react-books-2/static/css/main.073c9b0a.css.map",
+    "main.6f540891.js.map": "/react-books-2/static/js/main.6f540891.js.map",
+    "787.558a8ad1.chunk.js.map": "/react-books-2/static/js/787.558a8ad1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.a99a30e4.js"
+    "static/js/main.6f540891.js"
   ]
 }
