@@ -1,0 +1,1 @@
+export { RBooksThemeProvider } from './theme.provider';
