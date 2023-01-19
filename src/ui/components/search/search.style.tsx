@@ -14,10 +14,10 @@ export const searchStyle: SxProps<Theme> = (theme) => {
         fontSize: '1rem',
         margin: `0px ${theme.spacing(0.3)}`
       },
-      '&:last-child': {
+      '&:last-of-type': {
         borderRadius: '0px 4px 4px 0px',
       },
-      '&:first-child': {
+      '&:first-of-type': {
         borderRadius: '4px 0px 0px 4px',
       }
     },
