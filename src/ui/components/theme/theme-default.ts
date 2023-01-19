@@ -33,6 +33,19 @@ export const theme = createTheme({
   typography:{
     fontFamily: 'Ubuntu, sans-serif',
   },
+  components:{
+    MuiButton: {
+      styleOverrides:{
+        textPrimary: {
+          background: '#8C6645',
+          color: '#fff',
+          '&:hover':{
+            background: '#59412C'
+          }
+        }
+      }
+    }
+  },
   breakpoints: {
     keys: ['xs', 'sm', 'md', 'lg', 'xl'],
     values: { xs: 0, sm: 600, md: 960, lg: 1280, xl: 1920 },

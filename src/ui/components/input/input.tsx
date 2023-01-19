@@ -1,7 +1,8 @@
 import { TextField, TextFieldProps } from "@mui/material";
+import { inputStyle } from "./input.style";
 
 export const Input = (props: TextFieldProps) => {
   return (
-    <TextField {...props}></TextField>
+    <TextField {...props} sx={inputStyle}></TextField>
   );
 };

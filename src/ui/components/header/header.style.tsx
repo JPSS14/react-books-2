@@ -7,6 +7,7 @@ export const headerContainerStyle: SxProps<Theme> = (theme) => {
     padding: `${theme.spacing(0.5)} 0`,
     background: theme.palette.common.black,
     borderBottom: `3px solid ${rbooks.primaryColor}`,
+    marginBottom: theme.spacing(4),
 
     '& h1':{
       color: theme.palette.common.white,
