@@ -9,7 +9,8 @@ export const searchStyle: SxProps<Theme> = (theme) => {
     'button': {
       display: 'flex',
       alignItems: 'center',
-      fontWeight: 700,
+      fontSize: '0.8rem',
+      fontWeight: 600,
       '& svg': {
         fontSize: '1rem',
         margin: `0px ${theme.spacing(0.3)}`
