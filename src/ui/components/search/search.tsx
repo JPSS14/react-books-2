@@ -8,12 +8,12 @@ import SearchIcon from '@mui/icons-material/Search';
 export const Search = () => {
   return (
     <Box sx={searchStyle}>
-      <Button color="primary" size='small'>
+      <Button color="primary">
         <Box component='span' className='button_title'>Favoritos</Box>
         <StarIcon />
       </Button>
       <Input size="small" />
-      <Button color="primary" size='small'>
+      <Button color="primary">
         <SearchIcon />
         <Box component='span' className='button_title'>Pesquisar</Box>
       </Button>
