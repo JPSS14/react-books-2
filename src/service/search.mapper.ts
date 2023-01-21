@@ -52,14 +52,15 @@ export const responseBookMapper = (data: ResponseBooks) => {
             currencyCode: item.listPrice.currencyCode,
           },
           retailPrice: {
-            amountInMicros: item.listPrice.amountInMicros,
+            amountInMicros: item.retailPrice.amountInMicros,
             currencyCode: item.retailPrice.currencyCode,
-          }
+          },
+          giftable: item.giftable
         }))
       },
       accessInfo: {
         country: item.accessInfo.country,
-        viewability: item.accessInfo.country,
+        viewability: item.accessInfo.viewability,
         embeddable: item.accessInfo.embeddable,
         publicDomain: item.accessInfo.publicDomain,
         textToSpeechPermission: item.accessInfo.textToSpeechPermission,
@@ -68,11 +69,11 @@ export const responseBookMapper = (data: ResponseBooks) => {
           acsTokenLink: item.accessInfo.epub.acsTokenLink
         },
         pdf: {
-          isAvailable: item.accessInfo.pdf
+          isAvailable: item.accessInfo.pdf.isAvailable,
         },
         webReaderLink: item.accessInfo.webReaderLink,
         accessViewStatus: item.accessInfo.accessViewStatus,
-        quoteSharingAllowed: item.accessInfo.accessViewStatus
+        quoteSharingAllowed: item.accessInfo.quoteSharingAllowed
       },
       searchInfo: {
         textSnippet: item.searchInfo?.textSnippet

@@ -9,30 +9,29 @@ export type ResponseBooks = {
       volumeInfo: {
         title: string;
         authors: string[];
-        publisher: string;
+        publisher?: string;
         publishedDate: string;
-        description: string;
-        industryIdentifiers: [
+        description?: string;
+        industryIdentifiers: 
           {
             type: string;
             identifier: string;
-          }
-        ],
+          }[],
         readingModes: {
           text: boolean;
           image: boolean;
         },
         pageCount: number;
         printType: string;
-        categories: string[];
+        categories?: string[];
         maturityRating: string;
         allowAnonLogging: boolean;
         contentVersion: string;
-        panelizationSummary:{
+        panelizationSummary?:{
           containsEpubBubbles: boolean;
           containsImageBubbles: boolean;
         },
-        imageLinks:{
+        imageLinks?:{
           smallThumbnail: string;
           thumbnail: string;
         },
@@ -53,8 +52,8 @@ export type ResponseBooks = {
           amount: number;
           currencyCode: string;
         },
-        buyLink: string;
-        offers?:[
+        buyLink?: string;
+        offers?:
           {
             finskyOfferType: number;
             listPrice: {
@@ -66,18 +65,17 @@ export type ResponseBooks = {
               currencyCode: string;
             },
             giftable: boolean;
-          }
-        ]
+          }[]
       },
       accessInfo:{
         country: string;
         viewability: string;
         embeddable: boolean;
-        publicDomain: false;
+        publicDomain: boolean;
         textToSpeechPermission: string;
         epub:{
           isAvailable: boolean;
-          acsTokenLink: string;
+          acsTokenLink?: string;
         },
         pdf:{
           isAvailable: boolean;
