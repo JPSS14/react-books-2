@@ -45,12 +45,12 @@ export type ResponseBooks = {
         saleability: string;
         isEbook: boolean;
         listPrice?:{
-          amount: number;
-          currencyCode: string;
+          amount?: number;
+          currencyCode?: string;
         },
         retailPrice?:{
-          amount: number;
-          currencyCode: string;
+          amount?: number;
+          currencyCode?: string;
         },
         buyLink?: string;
         offers?:
@@ -85,7 +85,7 @@ export type ResponseBooks = {
         quoteSharingAllowed: boolean;
       },
       searchInfo?:{
-        textSnippet: string;
+        textSnippet?: string;
       }
     }[],
 };
