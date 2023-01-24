@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import { Home } from "../../pages";
-import { RBooksThemeProvider } from "../theme";
+import { Home } from "ui/pages";
+import { RBooksThemeProvider } from "ui/components/theme";
 
 export const App = () => {
   return (

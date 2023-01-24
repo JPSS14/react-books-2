@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
-import { Button } from "../button";
-import { Input } from "../input";
+import { Button } from "ui/components/button";
+import { Input } from "ui/components/input";
 import { searchStyle } from "./search.style";
 import StarIcon from '@mui/icons-material/Star';
 import SearchIcon from '@mui/icons-material/Search';
-import { getSearch } from "../../../service/search.service";
+import { getSearch } from "service/search.service";
 import { useState } from "react";
 
 export const Search = () => {

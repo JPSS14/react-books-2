@@ -1,4 +1,4 @@
-import { dateConverter } from "../helpers/utils/utils";
+import { dateConverter } from "helpers/utils/utils";
 import { ResponseBooks } from "./types";
 
 export const responseBookMapper = (data: ResponseBooks) => {
