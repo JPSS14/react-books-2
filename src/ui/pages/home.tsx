@@ -1,6 +1,5 @@
 import { Box } from "@mui/system";
-import { Layout } from "ui/components/layout";
-import { Search } from "ui/components/search";
+import { Layout, Search } from "ui/components";
 
 export const Home = () => {
   return (

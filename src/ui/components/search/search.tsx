@@ -1,11 +1,10 @@
+import { useState } from "react";
 import { Box } from "@mui/material";
-import { Button } from "ui/components/button";
-import { Input } from "ui/components/input";
+import { Button, Input } from "ui/components";
 import { searchStyle } from "./search.style";
 import StarIcon from '@mui/icons-material/Star';
 import SearchIcon from '@mui/icons-material/Search';
 import { getSearch } from "service/search.service";
-import { useState } from "react";
 
 export const Search = () => {
   const [search, setSearch] = useState('');
