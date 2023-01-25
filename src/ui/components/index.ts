@@ -1,4 +1,3 @@
-export { App } from './app';
 export { Button } from './button';
 export { Header } from './header';
 export { Input } from './input';
