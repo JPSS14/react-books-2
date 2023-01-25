@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import { Header } from '../header';
+import { Header } from 'ui/components/header';
 import { layoutStyle } from './layout.style';
 
 interface LayoutProps {
