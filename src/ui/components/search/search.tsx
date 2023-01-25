@@ -5,12 +5,16 @@ import { searchStyle } from "./search.style";
 import StarIcon from '@mui/icons-material/Star';
 import SearchIcon from '@mui/icons-material/Search';
 import { getSearch } from "service/search.service";
+import { useSearchContext } from "contexts/search-context/search-context";
 
 export const Search = () => {
+  const {setResultSearchBook} = useSearchContext();
   const [search, setSearch] = useState('');
   const searchBook = () => {
     if (search) {
-      getSearch(search);
+      getSearch(search).then(item => {
+        setResultSearchBook(item);
+      });
     }
   };
 
