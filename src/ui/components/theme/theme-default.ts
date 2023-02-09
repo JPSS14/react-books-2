@@ -1,7 +1,8 @@
 import { createTheme } from '@mui/material';
 
 const primaryColor = "#8C6645";
-const secondaryColor = "#59412C";
+const secondaryColor = "#995243";
+const darkPrimaryColor = "#59412C"
 const darkGray = "#262626";
 const gray = "#595959";
 
@@ -9,6 +10,7 @@ declare module '@mui/material/styles' {
   type RBooks = {
     primaryColor: string;
     secondaryColor: string;
+    darkPrimaryColor: string;
     darkGray: string;
     gray: string;
   };
@@ -26,6 +28,7 @@ export const theme = createTheme({
     rbooks: {
       primaryColor,
       secondaryColor,
+      darkPrimaryColor,
       darkGray,
       gray,
     },
@@ -38,6 +41,13 @@ export const theme = createTheme({
       styleOverrides:{
         textPrimary: {
           background: '#8C6645',
+          color: '#fff',
+          '&:hover':{
+            background: '#59412C'
+          }
+        },
+        textSecondary:{
+          background: '#995243',
           color: '#fff',
           '&:hover':{
             background: '#59412C'
