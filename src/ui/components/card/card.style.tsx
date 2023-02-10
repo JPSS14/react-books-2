@@ -39,7 +39,7 @@ export const CardImgContainerStyle: SxProps<Theme> = (theme) => {
     height: '250px',
     padding: theme.spacing(1),
     '& img': {
-
+      boxShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px',
     }
   };
 };
