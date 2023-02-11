@@ -8,7 +8,7 @@ import { getSearch } from "service/search.service";
 import { useSearchContext } from "contexts/search-context/search-context";
 
 export const Search = () => {
-  const {setResultSearchBook} = useSearchContext();
+  const { setResultSearchBook } = useSearchContext();
   const [search, setSearch] = useState('');
   const searchBook = () => {
     if (search) {
@@ -19,7 +19,7 @@ export const Search = () => {
   };
 
   const inputEnter = (input: string) => {
-    if(input === 'Enter'){
+    if (input === 'Enter') {
       searchBook();
     }
   };
@@ -29,7 +29,12 @@ export const Search = () => {
         <Box component='span' className='button_title'>Favoritos</Box>
         <StarIcon />
       </Button>
-      <Input size="small" onChange={(e) => setSearch(e.currentTarget.value)} onKeyUp={(e) => inputEnter(e.key)}/>
+      <Input
+        size="small"
+        onChange={(e) => setSearch(e.currentTarget.value)}
+        onKeyUp={(e) => inputEnter(e.key)}
+        placeholder="Encontre seu livro"
+      />
       <Button color="primary" onClick={() => searchBook()}>
         <SearchIcon />
         <Box component='span' className='button_title' >Pesquisar</Box>
