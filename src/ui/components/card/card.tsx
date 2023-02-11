@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
-import { BookItem } from "service/types";
+import { BookItemResponseMapper } from "service/types";
 import { Button } from '../button';
 import {
   CardAmountStyle,
@@ -13,7 +13,7 @@ import {
 } from './card.style';
 
 interface CardProps {
-  item: BookItem
+  item: BookItemResponseMapper
 };
 
 export const Card = (props: CardProps) => {
@@ -28,9 +28,8 @@ export const Card = (props: CardProps) => {
           {item.volumeInfo.imageLinks?.thumbnail ?
             <img src={item.volumeInfo.imageLinks.thumbnail} alt={item.volumeInfo.title} title={item.volumeInfo.title} /> : ''}
         </Box>
-        {/* TODO: Adicionar no mapper conversão para o valor de acordo com o país. EX: 39.9 -> R$ 39,90 */}
         <Box sx={CardAmountStyle}>
-          {item.saleInfo.listPrice?.amount ? `R$ ${item.saleInfo.listPrice?.amount}` : 'Indisponível'}
+          {item.saleInfo.listPrice?.amount ? item.saleInfo.listPrice?.amount : 'Indisponível'}
         </Box>
         <Box sx={CardCTAStyle}>
           <Button color="primary">Ver mais</Button>

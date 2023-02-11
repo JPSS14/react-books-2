@@ -1,8 +1,8 @@
-import { dateConverter } from "helpers/utils/utils";
+import { currencyConverter, dateConverter } from "helpers/utils/utils";
 import { ResponseBooks } from "./types";
 
 export const responseBookMapper = (data: ResponseBooks) => {
-  const {items, kind, totalItems} = data;
+  const { items, kind, totalItems } = data;
   return {
     kind: kind,
     totalItems: totalItems,
@@ -37,7 +37,8 @@ export const responseBookMapper = (data: ResponseBooks) => {
         saleability: item.saleInfo.saleability,
         isEbook: item.saleInfo.isEbook,
         listPrice: {
-          amount: item.saleInfo.listPrice?.amount,
+          amount: item.saleInfo.listPrice?.amount ?
+            currencyConverter(item.saleInfo.listPrice?.amount) : undefined,
           currencyCode: item.saleInfo.listPrice?.currencyCode
         },
         retailPrice: {

@@ -60,7 +60,7 @@ describe('Test responseBookMapper', () => {
             "saleability": "FOR_SALE",
             "isEbook": true,
             "listPrice": {
-              "amount": 39.9,
+              "amount": new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(39.9),
               "currencyCode": "BRL"
             },
             "retailPrice": {

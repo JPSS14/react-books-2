@@ -1,9 +1,9 @@
 import { useState, useContext, createContext } from "react";
-import { ResponseBooks } from "service/types"
+import { ResponseBooksMapper } from "service/types"
 
 type SearchContextData = {
-  resultSearchBook?: ResponseBooks;
-  setResultSearchBook: (e: ResponseBooks) => void;
+  resultSearchBook?: ResponseBooksMapper;
+  setResultSearchBook: (e: ResponseBooksMapper) => void;
 };
 
 export const SearchContext = createContext({} as SearchContextData);
@@ -13,7 +13,7 @@ type SearchContextProviderProps = {
 };
 
 export const SearchContextProvider = ({children}:SearchContextProviderProps) => {
-  const [resultSearchBook, setResultSearchBook] = useState({} as ResponseBooks);
+  const [resultSearchBook, setResultSearchBook] = useState({} as ResponseBooksMapper);
 
   return (
     <SearchContext.Provider value={{resultSearchBook, setResultSearchBook}}>
