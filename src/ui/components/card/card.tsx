@@ -16,8 +16,7 @@ interface CardProps {
   item: BookItemResponseMapper
 };
 
-export const Card = (props: CardProps) => {
-  const { item } = props;
+export const Card = ({ item }: CardProps) => {
   return (
     <Box sx={CardContainerStyle} component="article">
       <Box sx={CardTitleStyle} title={item.volumeInfo.title} component="header">
