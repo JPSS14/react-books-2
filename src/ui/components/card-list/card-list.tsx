@@ -9,10 +9,10 @@ interface CardListProps {
 
 export const CardList = ({ items }: CardListProps) => {
   return (
-    <Grid container sx={CardListContainerStyle}>
+    <Grid container sx={CardListContainerStyle} component="ul">
       {items.map(
         (item, key) =>
-          <Grid key={key}>
+          <Grid key={key} component="li">
             <Card item={item} key={item.id} />
           </Grid>
       )}
