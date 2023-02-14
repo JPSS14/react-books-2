@@ -5,4 +5,5 @@ export { Layout } from './layout';
 export { Search } from './search';
 export { Card } from './card';
 export { CardList } from './card-list';
+export { Footer } from './footer';
 export { RBooksThemeProvider } from './theme'
