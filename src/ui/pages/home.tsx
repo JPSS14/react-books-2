@@ -1,11 +1,18 @@
 import { Box } from "@mui/system";
-import { Layout, Search } from "ui/components";
+import { CardList, Layout, Search } from "ui/components";
+import { useSearchContext } from "contexts/search-context/search-context";
 
 export const Home = () => {
+  const { resultSearchBook } = useSearchContext();
   return (
     <Layout>
       <Box>
-        <Search/>
+        <Search />
+        <Box>
+          {resultSearchBook?.items ?
+           <CardList items={resultSearchBook?.items}/>
+            : <></>}
+        </Box>
       </Box>
     </Layout>
   );
