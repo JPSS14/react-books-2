@@ -1,5 +1,6 @@
 import { Box } from '@mui/material';
 import { Header } from 'ui/components/header';
+import { Footer } from '../footer';
 import { layoutStyle } from './layout.style';
 
 interface LayoutProps {
@@ -11,6 +12,7 @@ export const Layout = ({ children }: LayoutProps) => {
     <Box component='div' sx={layoutStyle}>
       <Header />
       {children}
+      <Footer />
     </Box>
   );
 };
