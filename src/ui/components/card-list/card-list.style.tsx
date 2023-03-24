@@ -3,7 +3,7 @@ import { SxProps, Theme } from '@mui/material';
 export const CardListContainerStyle:SxProps<Theme> = (theme) => {
   return {
     maxWidth: '1264px',
-    padding: `${theme.spacing(6)} 0 ${theme.spacing(12)} 0`,
+    padding: `${theme.spacing(6)} 0 ${theme.spacing(6)} 0`,
     '& li':{
       listStyle: 'none'
     },

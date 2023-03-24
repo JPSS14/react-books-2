@@ -8,7 +8,6 @@ export const FooterContainerStyle: SxProps<Theme> = (theme) => {
     background: theme.palette.common.black,
     borderTop: `3px solid ${rbooks.primaryColor}`,
     marginTop: theme.spacing(4),
-    position: 'absolute',
     bottom: 0,
 
     '& h1':{
