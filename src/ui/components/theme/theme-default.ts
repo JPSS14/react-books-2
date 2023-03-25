@@ -33,23 +33,37 @@ export const theme = createTheme({
       gray,
     },
   },
-  typography:{
+  typography: {
     fontFamily: 'Ubuntu, sans-serif',
   },
-  components:{
+  components: {
+    MuiPagination: {
+      styleOverrides: {
+        ul: {
+          '& .MuiPaginationItem-root': {
+            background: '#8C6645',
+            color: '#fff',
+            '&:hover': {
+              background: '#995243',
+              color: '#fff',
+            }
+          }
+        }
+      }
+    },
     MuiButton: {
-      styleOverrides:{
+      styleOverrides: {
         textPrimary: {
           background: '#8C6645',
           color: '#fff',
-          '&:hover':{
+          '&:hover': {
             background: '#59412C'
           }
         },
-        textSecondary:{
+        textSecondary: {
           background: '#995243',
           color: '#fff',
-          '&:hover':{
+          '&:hover': {
             background: '#59412C'
           }
         }
