@@ -1,12 +1,12 @@
-import { createTheme } from '@mui/material';
+import { createTheme } from "@mui/material";
 
 const primaryColor = "#8C6645";
 const secondaryColor = "#995243";
-const darkPrimaryColor = "#59412C"
+const darkPrimaryColor = "#59412C";
 const darkGray = "#262626";
 const gray = "#595959";
 
-declare module '@mui/material/styles' {
+declare module "@mui/material/styles" {
   type RBooks = {
     primaryColor: string;
     secondaryColor: string;
@@ -20,8 +20,7 @@ declare module '@mui/material/styles' {
   interface PaletteOptions {
     rbooks: RBooks;
   }
-};
-
+}
 
 export const theme = createTheme({
   palette: {
@@ -34,54 +33,54 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Ubuntu, sans-serif',
+    fontFamily: "Ubuntu, sans-serif",
   },
   components: {
     MuiPagination: {
       styleOverrides: {
         ul: {
-          '& .MuiPaginationItem-root': {
-            background: '#8C6645',
-            color: '#fff',
-            '&:hover': {
-              background: '#995243',
-              color: '#fff',
-            }
-          }
-        }
-      }
+          "& .MuiPaginationItem-root": {
+            background: "#8C6645",
+            color: "#fff",
+            "&:hover": {
+              background: "#59412C",
+              color: "#fff",
+            },
+          },
+        },
+      },
     },
     MuiButton: {
       styleOverrides: {
         textPrimary: {
-          background: '#8C6645',
-          color: '#fff',
-          '&:hover': {
-            background: '#59412C'
-          }
+          background: "#8C6645",
+          color: "#fff",
+          "&:hover": {
+            background: "#59412C",
+          },
         },
         textSecondary: {
-          background: '#995243',
-          color: '#fff',
-          '&:hover': {
-            background: '#59412C'
-          }
-        }
-      }
-    }
+          background: "#995243",
+          color: "#fff",
+          "&:hover": {
+            background: "#59412C",
+          },
+        },
+      },
+    },
   },
   breakpoints: {
-    keys: ['xs', 'sm', 'md', 'lg', 'xl'],
+    keys: ["xs", "sm", "md", "lg", "xl"],
     values: { xs: 0, sm: 600, md: 960, lg: 1280, xl: 1920 },
   },
-  direction: 'ltr',
+  direction: "ltr",
   mixins: {
     toolbar: {
       minHeight: 56,
-      '@media (min-width:0px) and (orientation: landscape)': {
+      "@media (min-width:0px) and (orientation: landscape)": {
         minHeight: 48,
       },
-      '@media (min-width:600px)': { minHeight: 64 },
+      "@media (min-width:600px)": { minHeight: 64 },
     },
   },
 });
