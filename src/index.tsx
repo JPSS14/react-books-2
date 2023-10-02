@@ -1,17 +1,20 @@
-import { SearchContextProvider } from 'contexts/search-context/search-context';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { App } from 'ui/components/app';
-import reportWebVitals from './reportWebVitals';
+import { SearchContextProvider } from "contexts/search-context/search-context";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { App } from "ui/components/app";
+import reportWebVitals from "./reportWebVitals";
+import { FavoriteContextProvider } from "contexts/favorite-context/favorite-context";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <SearchContextProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <FavoriteContextProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </FavoriteContextProvider>
   </SearchContextProvider>
 );
 

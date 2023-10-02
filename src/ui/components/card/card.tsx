@@ -1,7 +1,7 @@
-import { Box, Typography } from '@mui/material';
-import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import { Box, IconButton, Typography } from "@mui/material";
+import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import { BookItemResponseMapper } from "service/types";
-import { Button } from '../button';
+import { Button } from "../button";
 import {
   CardAmountStyle,
   CardContainerStyle,
@@ -9,14 +9,16 @@ import {
   CardCTAStyle,
   CardFooterStyle,
   CardImgContainerStyle,
-  CardTitleStyle
-} from './card.style';
+  CardTitleStyle,
+} from "./card.style";
+import { useFavoriteContext } from "contexts/favorite-context/favorite-context";
 
 interface CardProps {
-  item: BookItemResponseMapper
-};
+  item: BookItemResponseMapper;
+}
 
 export const Card = ({ item }: CardProps) => {
+  const { handleSaveFavorite } = useFavoriteContext();
   return (
     <Box sx={CardContainerStyle} component="article">
       <Box sx={CardTitleStyle} title={item.volumeInfo.title} component="header">
@@ -24,20 +26,33 @@ export const Card = ({ item }: CardProps) => {
       </Box>
       <Box sx={CardContentStyle}>
         <Box sx={CardImgContainerStyle}>
-          {item.volumeInfo.imageLinks?.thumbnail ?
-            <img src={item.volumeInfo.imageLinks.thumbnail} alt={item.volumeInfo.title} title={item.volumeInfo.title} /> : ''}
+          {item.volumeInfo.imageLinks?.thumbnail ? (
+            <img
+              src={item.volumeInfo.imageLinks.thumbnail}
+              alt={item.volumeInfo.title}
+              title={item.volumeInfo.title}
+            />
+          ) : (
+            ""
+          )}
         </Box>
         <Box sx={CardAmountStyle}>
-          {item.saleInfo.listPrice?.amount ? item.saleInfo.listPrice?.amount : 'Indisponível'}
+          {item.saleInfo.listPrice?.amount
+            ? item.saleInfo.listPrice?.amount
+            : "Indisponível"}
         </Box>
         <Box sx={CardCTAStyle}>
           <Button color="primary">Ver mais</Button>
           <Box className="favorite__container">
-            <StarOutlineIcon />
+            <IconButton onClick={() => handleSaveFavorite(item.id)}>
+              <StarOutlineIcon />
+            </IconButton>
           </Box>
         </Box>
       </Box>
-      <Box sx={CardFooterStyle} component="footer">Publicado: {item.volumeInfo.publishedDate}</Box>
+      <Box sx={CardFooterStyle} component="footer">
+        Publicado: {item.volumeInfo.publishedDate}
+      </Box>
     </Box>
   );
 };
