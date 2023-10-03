@@ -1,9 +1,13 @@
 import { createContext, useContext, useState } from "react";
+import { BookItemResponseMapper } from "service/types";
 
 type FavoriteContextData = {
-  favoriteList: string[];
-  setFavoriteList: React.Dispatch<React.SetStateAction<string[]>>;
-  handleSaveFavorite: (id: string) => void;
+  favoriteList: BookItemResponseMapper[];
+  setFavoriteList: React.Dispatch<
+    React.SetStateAction<BookItemResponseMapper[]>
+  >;
+  handleSaveFavorite: (book: BookItemResponseMapper) => void;
+  handleDeleteFavorite: (book: BookItemResponseMapper) => void;
 };
 
 export const FavoriteContext = createContext({} as FavoriteContextData);
@@ -15,15 +19,29 @@ type FavoriteContextProviderProps = {
 export const FavoriteContextProvider = ({
   children,
 }: FavoriteContextProviderProps) => {
-  const [favoriteList, setFavoriteList] = useState<string[]>([]);
+  const [favoriteList, setFavoriteList] = useState<BookItemResponseMapper[]>(
+    []
+  );
 
-  const handleSaveFavorite = (id: string) => {
-    setFavoriteList([...favoriteList, id]);
+  const handleSaveFavorite = (book: BookItemResponseMapper) => {
+    setFavoriteList([...favoriteList, book]);
   };
+
+  const handleDeleteFavorite = (book: BookItemResponseMapper) => {
+    const removedFavorite = favoriteList.filter((item) => item.id !== book.id);
+    setFavoriteList(removedFavorite);
+  };
+
+  console.log(favoriteList);
 
   return (
     <FavoriteContext.Provider
-      value={{ favoriteList, setFavoriteList, handleSaveFavorite }}
+      value={{
+        favoriteList,
+        setFavoriteList,
+        handleSaveFavorite,
+        handleDeleteFavorite,
+      }}
     >
       {children}
     </FavoriteContext.Provider>
