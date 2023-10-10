@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/react-books-2/static/js/main.5a202ae1.js",
+    "main.js": "/react-books-2/static/js/main.6584792c.js",
     "static/js/787.558a8ad1.chunk.js": "/react-books-2/static/js/787.558a8ad1.chunk.js",
     "index.html": "/react-books-2/index.html",
-    "main.5a202ae1.js.map": "/react-books-2/static/js/main.5a202ae1.js.map",
+    "main.6584792c.js.map": "/react-books-2/static/js/main.6584792c.js.map",
     "787.558a8ad1.chunk.js.map": "/react-books-2/static/js/787.558a8ad1.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.5a202ae1.js"
+    "static/js/main.6584792c.js"
   ]
 }
