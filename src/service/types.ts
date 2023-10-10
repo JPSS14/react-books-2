@@ -9,15 +9,14 @@ export type BookItemResponse = {
     publisher?: string;
     publishedDate: string;
     description?: string;
-    industryIdentifiers:
-    {
+    industryIdentifiers: {
       type: string;
       identifier: string;
-    }[],
+    }[];
     readingModes: {
       text: boolean;
       image: boolean;
-    },
+    };
     pageCount: number;
     printType: string;
     categories?: string[];
@@ -27,16 +26,16 @@ export type BookItemResponse = {
     panelizationSummary?: {
       containsEpubBubbles: boolean;
       containsImageBubbles: boolean;
-    },
+    };
     imageLinks?: {
       smallThumbnail: string;
       thumbnail: string;
-    },
+    };
     language: string;
     previewLink: string;
     infoLink: string;
     canonicalVolumeLink: string;
-  },
+  };
   saleInfo: {
     country: string;
     saleability: string;
@@ -44,26 +43,25 @@ export type BookItemResponse = {
     listPrice?: {
       amount?: number;
       currencyCode?: string;
-    },
+    };
     retailPrice?: {
       amount?: number;
       currencyCode?: string;
-    },
+    };
     buyLink?: string;
-    offers?:
-    {
+    offers?: {
       finskyOfferType: number;
       listPrice: {
         amountInMicros: number;
         currencyCode: string;
-      },
+      };
       retailPrice: {
         amountInMicros: number;
         currencyCode: string;
-      },
+      };
       giftable: boolean;
-    }[]
-  },
+    }[];
+  };
   accessInfo: {
     country: string;
     viewability: string;
@@ -73,20 +71,21 @@ export type BookItemResponse = {
     epub: {
       isAvailable: boolean;
       acsTokenLink?: string;
-    },
+    };
     pdf: {
       isAvailable: boolean;
-    },
+    };
     webReaderLink: string;
     accessViewStatus: string;
     quoteSharingAllowed: boolean;
-  },
+  };
   searchInfo?: {
     textSnippet?: string;
-  }
+  };
 };
 
 export type BookItemResponseMapper = {
+  favorite: boolean;
   kind: string;
   id: string;
   etag: string;
@@ -97,15 +96,14 @@ export type BookItemResponseMapper = {
     publisher?: string;
     publishedDate: string;
     description?: string;
-    industryIdentifiers:
-    {
+    industryIdentifiers: {
       type: string;
       identifier: string;
-    }[],
+    }[];
     readingModes: {
       text: boolean;
       image: boolean;
-    },
+    };
     pageCount: number;
     printType: string;
     categories?: string[];
@@ -115,16 +113,16 @@ export type BookItemResponseMapper = {
     panelizationSummary?: {
       containsEpubBubbles: boolean;
       containsImageBubbles: boolean;
-    },
+    };
     imageLinks?: {
       smallThumbnail: string;
       thumbnail: string;
-    },
+    };
     language: string;
     previewLink: string;
     infoLink: string;
     canonicalVolumeLink: string;
-  },
+  };
   saleInfo: {
     country: string;
     saleability: string;
@@ -132,26 +130,25 @@ export type BookItemResponseMapper = {
     listPrice?: {
       amount?: string;
       currencyCode?: string;
-    },
+    };
     retailPrice?: {
       amount?: number;
       currencyCode?: string;
-    },
+    };
     buyLink?: string;
-    offers?:
-    {
+    offers?: {
       finskyOfferType: number;
       listPrice: {
         amountInMicros: number;
         currencyCode: string;
-      },
+      };
       retailPrice: {
         amountInMicros: number;
         currencyCode: string;
-      },
+      };
       giftable: boolean;
-    }[]
-  },
+    }[];
+  };
   accessInfo: {
     country: string;
     viewability: string;
@@ -161,17 +158,17 @@ export type BookItemResponseMapper = {
     epub: {
       isAvailable: boolean;
       acsTokenLink?: string;
-    },
+    };
     pdf: {
       isAvailable: boolean;
-    },
+    };
     webReaderLink: string;
     accessViewStatus: string;
     quoteSharingAllowed: boolean;
-  },
+  };
   searchInfo?: {
     textSnippet?: string;
-  }
+  };
 };
 
 export type ResponseBooks = {

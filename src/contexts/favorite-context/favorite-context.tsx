@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react";
+import { useSearchContext } from "contexts/search-context/search-context";
+import { createContext, useContext, useState, useEffect } from "react";
 import { BookItemResponseMapper } from "service/types";
 
 type FavoriteContextData = {
@@ -8,6 +9,7 @@ type FavoriteContextData = {
   >;
   handleSaveFavorite: (book: BookItemResponseMapper) => void;
   handleDeleteFavorite: (book: BookItemResponseMapper) => void;
+  filedListResult: BookItemResponseMapper[];
 };
 
 export const FavoriteContext = createContext({} as FavoriteContextData);
@@ -19,6 +21,10 @@ type FavoriteContextProviderProps = {
 export const FavoriteContextProvider = ({
   children,
 }: FavoriteContextProviderProps) => {
+  const { paginatedBooksResult } = useSearchContext();
+  const [filedListResult, setFiledListResult] = useState<
+    BookItemResponseMapper[]
+  >([]);
   const [favoriteList, setFavoriteList] = useState<BookItemResponseMapper[]>(
     []
   );
@@ -32,7 +38,22 @@ export const FavoriteContextProvider = ({
     setFavoriteList(removedFavorite);
   };
 
-  console.log(favoriteList);
+  useEffect(() => {
+    if (paginatedBooksResult?.length) {
+      if (favoriteList.length) {
+        const result = paginatedBooksResult?.map((item) => {
+          const favoriteItem = favoriteList.find((fav) => fav.id === item.id);
+          return {
+            ...item,
+            favorite: favoriteItem ? true : false,
+          };
+        });
+        setFiledListResult(result);
+      } else {
+        setFiledListResult(paginatedBooksResult);
+      }
+    }
+  }, [favoriteList, paginatedBooksResult]);
 
   return (
     <FavoriteContext.Provider
@@ -41,6 +62,7 @@ export const FavoriteContextProvider = ({
         setFavoriteList,
         handleSaveFavorite,
         handleDeleteFavorite,
+        filedListResult,
       }}
     >
       {children}

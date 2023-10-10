@@ -6,7 +6,8 @@ export const responseBookMapper = (data: ResponseBooks) => {
   return {
     kind: kind,
     totalItems: totalItems,
-    items: items.map(item => ({
+    items: items.map((item) => ({
+      favorite: false,
       kind: item.kind,
       id: item.id,
       etag: item.etag,
@@ -30,23 +31,24 @@ export const responseBookMapper = (data: ResponseBooks) => {
         language: item.volumeInfo.language,
         previewLink: item.volumeInfo.previewLink,
         infoLink: item.volumeInfo.infoLink,
-        canonicalVolumeLink: item.volumeInfo.canonicalVolumeLink
+        canonicalVolumeLink: item.volumeInfo.canonicalVolumeLink,
       },
       saleInfo: {
         country: item.saleInfo.country,
         saleability: item.saleInfo.saleability,
         isEbook: item.saleInfo.isEbook,
         listPrice: {
-          amount: item.saleInfo.listPrice?.amount ?
-            currencyConverter(item.saleInfo.listPrice?.amount) : undefined,
-          currencyCode: item.saleInfo.listPrice?.currencyCode
+          amount: item.saleInfo.listPrice?.amount
+            ? currencyConverter(item.saleInfo.listPrice?.amount)
+            : undefined,
+          currencyCode: item.saleInfo.listPrice?.currencyCode,
         },
         retailPrice: {
           amount: item.saleInfo.retailPrice?.amount,
-          currencyCode: item.saleInfo.retailPrice?.currencyCode
+          currencyCode: item.saleInfo.retailPrice?.currencyCode,
         },
         buyLink: item.saleInfo.buyLink,
-        offers: item.saleInfo.offers?.map(item => ({
+        offers: item.saleInfo.offers?.map((item) => ({
           finskyOfferType: item.finskyOfferType,
           listPrice: {
             amountInMicros: item.listPrice.amountInMicros,
@@ -56,8 +58,8 @@ export const responseBookMapper = (data: ResponseBooks) => {
             amountInMicros: item.retailPrice.amountInMicros,
             currencyCode: item.retailPrice.currencyCode,
           },
-          giftable: item.giftable
-        }))
+          giftable: item.giftable,
+        })),
       },
       accessInfo: {
         country: item.accessInfo.country,
@@ -67,18 +69,18 @@ export const responseBookMapper = (data: ResponseBooks) => {
         textToSpeechPermission: item.accessInfo.textToSpeechPermission,
         epub: {
           isAvailable: item.accessInfo.epub.isAvailable,
-          acsTokenLink: item.accessInfo.epub.acsTokenLink
+          acsTokenLink: item.accessInfo.epub.acsTokenLink,
         },
         pdf: {
           isAvailable: item.accessInfo.pdf.isAvailable,
         },
         webReaderLink: item.accessInfo.webReaderLink,
         accessViewStatus: item.accessInfo.accessViewStatus,
-        quoteSharingAllowed: item.accessInfo.quoteSharingAllowed
+        quoteSharingAllowed: item.accessInfo.quoteSharingAllowed,
       },
       searchInfo: {
-        textSnippet: item.searchInfo?.textSnippet
-      }
-    }))
-  }
+        textSnippet: item.searchInfo?.textSnippet,
+      },
+    })),
+  };
 };

@@ -23,14 +23,22 @@ export const Card = ({ item }: CardProps) => {
   const { handleSaveFavorite, handleDeleteFavorite } = useFavoriteContext();
   const [isFavorite, setIsFavorite] = useState(false);
 
-  const handleAddFavorite = (id: BookItemResponseMapper) => {
+  const handleAddFavorite = (book: BookItemResponseMapper) => {
     setIsFavorite(true);
-    handleSaveFavorite(id);
+    const isFavoriteItem = {
+      ...book,
+      favorite: true,
+    };
+    handleSaveFavorite(isFavoriteItem);
   };
 
-  const handleRemoveFavorite = (id: BookItemResponseMapper) => {
+  const handleRemoveFavorite = (book: BookItemResponseMapper) => {
     setIsFavorite(false);
-    handleDeleteFavorite(id);
+    const isFavoriteItem = {
+      ...book,
+      favorite: false,
+    };
+    handleDeleteFavorite(isFavoriteItem);
   };
 
   return (
@@ -57,7 +65,7 @@ export const Card = ({ item }: CardProps) => {
         </Box>
         <Box sx={CardCTAStyle}>
           <Button color="primary">Ver mais</Button>
-          {isFavorite ? (
+          {isFavorite || item.favorite ? (
             <Box className="favorite__container">
               <IconButton onClick={() => handleRemoveFavorite(item)}>
                 <StarIcon />
