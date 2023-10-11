@@ -14,6 +14,7 @@ import {
 } from "./card.style";
 import { useFavoriteContext } from "contexts/favorite-context/favorite-context";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface CardProps {
   item: BookItemResponseMapper;
@@ -22,6 +23,7 @@ interface CardProps {
 export const Card = ({ item }: CardProps) => {
   const { handleSaveFavorite, handleDeleteFavorite } = useFavoriteContext();
   const [isFavorite, setIsFavorite] = useState(false);
+  const history = useNavigate();
 
   const handleAddFavorite = (book: BookItemResponseMapper) => {
     setIsFavorite(true);
@@ -39,6 +41,10 @@ export const Card = ({ item }: CardProps) => {
       favorite: false,
     };
     handleDeleteFavorite(isFavoriteItem);
+  };
+
+  const handleSeeMore = (id: string) => {
+    history(`/book/${id}`);
   };
 
   return (
@@ -64,7 +70,9 @@ export const Card = ({ item }: CardProps) => {
             : "Indisponível"}
         </Box>
         <Box sx={CardCTAStyle}>
-          <Button color="primary">Ver mais</Button>
+          <Button color="primary" onClick={() => handleSeeMore(item.id)}>
+            Ver mais
+          </Button>
           {isFavorite || item.favorite ? (
             <Box className="favorite__container">
               <IconButton onClick={() => handleRemoveFavorite(item)}>
