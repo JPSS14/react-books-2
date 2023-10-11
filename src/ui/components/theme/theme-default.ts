@@ -50,6 +50,24 @@ export const theme = createTheme({
         },
       },
     },
+    MuiIconButton: {
+      styleOverrides: {
+        colorPrimary: {
+          background: "#8C6645",
+          color: "#fff",
+          "&:hover": {
+            background: "#59412C",
+          },
+        },
+        colorSecondary: {
+          background: "#995243",
+          color: "#fff",
+          "&:hover": {
+            background: "#59412C",
+          },
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         textPrimary: {
