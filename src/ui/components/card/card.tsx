@@ -11,6 +11,7 @@ import {
   CardFooterStyle,
   CardImgContainerStyle,
   CardTitleStyle,
+  CardWithouImgStyle,
 } from "./card.style";
 import { useFavoriteContext } from "contexts/favorite-context/favorite-context";
 import { useState } from "react";
@@ -61,7 +62,9 @@ export const Card = ({ item }: CardProps) => {
               title={item.volumeInfo.title}
             />
           ) : (
-            ""
+            <Box sx={CardWithouImgStyle}>
+              <Typography component="span">Sem imagem</Typography>
+            </Box>
           )}
         </Box>
         <Box sx={CardAmountStyle}>
