@@ -2,31 +2,39 @@ import { useState } from "react";
 import { Box } from "@mui/material";
 import { Button, Input } from "ui/components";
 import { searchStyle } from "./search.style";
-import StarIcon from '@mui/icons-material/Star';
-import SearchIcon from '@mui/icons-material/Search';
+import StarIcon from "@mui/icons-material/Star";
+import SearchIcon from "@mui/icons-material/Search";
 import { getSearch } from "service/search.service";
 import { useSearchContext } from "contexts/search-context/search-context";
+import { useNavigate } from "react-router-dom";
 
 export const Search = () => {
   const { setResultSearchBook } = useSearchContext();
-  const [search, setSearch] = useState('');
+  const history = useNavigate();
+  const [search, setSearch] = useState("");
   const searchBook = () => {
     if (search) {
-      getSearch(search).then(item => {
+      getSearch(search).then((item) => {
         setResultSearchBook(item);
       });
     }
   };
 
   const inputEnter = (input: string) => {
-    if (input === 'Enter') {
+    if (input === "Enter") {
       searchBook();
     }
   };
+
+  const handleFavoritesPush = () => {
+    history("/favorites");
+  };
   return (
     <Box sx={searchStyle}>
-      <Button color="primary">
-        <Box component='span' className='button_title'>Favoritos</Box>
+      <Button color="primary" onClick={handleFavoritesPush}>
+        <Box component="span" className="button_title">
+          Favoritos
+        </Box>
         <StarIcon />
       </Button>
       <Input
@@ -37,7 +45,9 @@ export const Search = () => {
       />
       <Button color="primary" onClick={() => searchBook()}>
         <SearchIcon />
-        <Box component='span' className='button_title' >Pesquisar</Box>
+        <Box component="span" className="button_title">
+          Pesquisar
+        </Box>
       </Button>
     </Box>
   );
