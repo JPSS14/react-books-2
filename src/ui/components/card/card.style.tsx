@@ -13,52 +13,6 @@ export const CardContainerStyle: SxProps<Theme> = (theme) => {
   };
 };
 
-export const CardTitleStyle: SxProps<Theme> = (theme) => {
-  const { rbooks } = theme.palette;
-  return {
-    background: theme.palette.common.black,
-    color: theme.palette.common.white,
-    height: "40px",
-    borderRadius: "10px 10px 0px 0px",
-    borderBottom: `1px solid ${rbooks.primaryColor}`,
-    padding: "10px",
-    whiteSpace: "nowrap",
-    textAlign: "center",
-    "& h2": {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-    },
-  };
-};
-
-export const CardWithouImgStyle: SxProps<Theme> = (theme) => {
-  const { rbooks } = theme.palette;
-  return {
-    border: `2px solid ${rbooks.primaryColor}`,
-    width: "143px",
-    height: "218px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    color: rbooks.primaryColor,
-    pointerEvents: "none",
-  };
-};
-
-export const CardImgContainerStyle: SxProps<Theme> = (theme) => {
-  return {
-    display: "flex",
-    justifyContent: "center",
-    width: "100%",
-    height: "250px",
-    padding: theme.spacing(2),
-    "& img": {
-      boxShadow:
-        "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px",
-    },
-  };
-};
-
 export const CardContentStyle: SxProps<Theme> = (theme) => {
   const { rbooks } = theme.palette;
   return {

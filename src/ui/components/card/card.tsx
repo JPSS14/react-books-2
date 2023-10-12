@@ -1,4 +1,4 @@
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import StarIcon from "@mui/icons-material/Star";
 import { BookItemResponseMapper } from "service/types";
@@ -9,13 +9,12 @@ import {
   CardContentStyle,
   CardCTAStyle,
   CardFooterStyle,
-  CardImgContainerStyle,
-  CardWithouImgStyle,
 } from "./card.style";
 import { useFavoriteContext } from "contexts/favorite-context/favorite-context";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CardHeader } from "./card-header";
+import { CardImage } from "./card-image";
 
 interface CardProps {
   item: BookItemResponseMapper;
@@ -52,19 +51,10 @@ export const Card = ({ item }: CardProps) => {
     <Box sx={CardContainerStyle} component="article">
       <CardHeader title={item.volumeInfo.title} />
       <Box sx={CardContentStyle}>
-        <Box sx={CardImgContainerStyle}>
-          {item.volumeInfo.imageLinks?.thumbnail ? (
-            <img
-              src={item.volumeInfo.imageLinks.thumbnail}
-              alt={item.volumeInfo.title}
-              title={item.volumeInfo.title}
-            />
-          ) : (
-            <Box sx={CardWithouImgStyle}>
-              <Typography component="span">Sem imagem</Typography>
-            </Box>
-          )}
-        </Box>
+        <CardImage
+          image={item.volumeInfo.imageLinks?.thumbnail}
+          title={item.volumeInfo.title}
+        />
         <Box sx={CardAmountStyle}>
           {item.saleInfo.listPrice?.amount
             ? item.saleInfo.listPrice?.amount
