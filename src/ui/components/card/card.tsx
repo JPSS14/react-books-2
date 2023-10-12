@@ -10,12 +10,12 @@ import {
   CardCTAStyle,
   CardFooterStyle,
   CardImgContainerStyle,
-  CardTitleStyle,
   CardWithouImgStyle,
 } from "./card.style";
 import { useFavoriteContext } from "contexts/favorite-context/favorite-context";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { CardHeader } from "./card-header";
 
 interface CardProps {
   item: BookItemResponseMapper;
@@ -50,9 +50,7 @@ export const Card = ({ item }: CardProps) => {
 
   return (
     <Box sx={CardContainerStyle} component="article">
-      <Box sx={CardTitleStyle} title={item.volumeInfo.title} component="header">
-        <Typography component="h2">{item.volumeInfo.title}</Typography>
-      </Box>
+      <CardHeader title={item.volumeInfo.title} />
       <Box sx={CardContentStyle}>
         <Box sx={CardImgContainerStyle}>
           {item.volumeInfo.imageLinks?.thumbnail ? (
