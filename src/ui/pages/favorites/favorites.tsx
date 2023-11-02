@@ -1,11 +1,16 @@
-import { Box, Typography } from "@mui/material";
-import { Layout } from "ui/components";
+import { Box } from "@mui/material";
+import { useFavoriteContext } from "contexts/favorite-context/favorite-context";
+import { CardList, Layout, SectionHeader } from "ui/components";
 
 export const Favorites = () => {
+  const { favoriteList } = useFavoriteContext();
   return (
     <Layout>
       <Box>
-        <Typography component="h2">Meus Favoritos</Typography>
+        <SectionHeader />
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <CardList items={favoriteList} />
+        </Box>
       </Box>
     </Layout>
   );
