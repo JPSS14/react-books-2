@@ -55,5 +55,14 @@
   "license": "MIT",
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "jest":{
+    "collectCoverageFrom": [
+      "**/*.{js,jsx,ts,tsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**/index.ts",
+      "!**/types.ts"
+    ]
   }
 }
