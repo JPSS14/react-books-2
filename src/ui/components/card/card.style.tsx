@@ -21,22 +21,6 @@ export const CardContentStyle: SxProps<Theme> = (theme) => {
   };
 };
 
-export const CardCTAStyle: SxProps<Theme> = (theme) => {
-  return {
-    display: "flex",
-    flexDirection: "column",
-    "& button": {
-      margin: "10px auto",
-    },
-    "& .favorite__container": {
-      width: "100%",
-      "& svg": {
-        color: "yellow",
-      },
-    },
-  };
-};
-
 export const CardFooterStyle: SxProps<Theme> = (theme) => {
   const { rbooks } = theme.palette;
   return {
