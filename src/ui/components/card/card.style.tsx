@@ -21,16 +21,6 @@ export const CardContentStyle: SxProps<Theme> = (theme) => {
   };
 };
 
-export const CardAmountStyle: SxProps<Theme> = (theme) => {
-  const { rbooks } = theme.palette;
-  return {
-    color: rbooks.primaryColor,
-    fontSize: "1.3rem",
-    textAlign: "center",
-    fontWeight: 700,
-  };
-};
-
 export const CardCTAStyle: SxProps<Theme> = (theme) => {
   return {
     display: "flex",

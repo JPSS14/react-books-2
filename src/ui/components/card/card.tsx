@@ -4,7 +4,6 @@ import StarIcon from "@mui/icons-material/Star";
 import { BookItemResponseMapper } from "service/types";
 import { Button } from "../button";
 import {
-  CardAmountStyle,
   CardContainerStyle,
   CardContentStyle,
   CardCTAStyle,
@@ -15,6 +14,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CardHeader } from "./card-header";
 import { CardImage } from "./card-image";
+import { CardAmount } from "./card-amount";
 
 interface CardProps {
   item: BookItemResponseMapper;
@@ -55,11 +55,7 @@ export const Card = ({ item }: CardProps) => {
           image={item.volumeInfo.imageLinks?.thumbnail}
           title={item.volumeInfo.title}
         />
-        <Box sx={CardAmountStyle}>
-          {item.saleInfo.listPrice?.amount
-            ? item.saleInfo.listPrice?.amount
-            : "Indisponível"}
-        </Box>
+        <CardAmount price={item.saleInfo.listPrice?.amount} />
         <Box sx={CardCTAStyle}>
           <Button color="primary" onClick={() => handleSeeMore(item.id)}>
             Ver mais
