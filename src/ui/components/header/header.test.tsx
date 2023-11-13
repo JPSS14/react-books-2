@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { ThemeProvider } from "@mui/material";
-import { Header } from "./header";
-import { theme } from "ui/components/theme/theme-default";
+import { Header } from "./Header";
+import { theme } from "ui/components/Theme/theme-default";
 
 describe("Header component", () => {
   test("renders the header with the correct text and link", () => {

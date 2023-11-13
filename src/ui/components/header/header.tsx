@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { headerContainerStyle } from "./header.style";
+import { headerContainerStyle } from "./Header.style";
 import { Link } from "react-router-dom";
 
 export const Header = () => {

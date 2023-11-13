@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import { CardAmount } from "./card-amount";
+import { CardAmount } from "./CardAmount";
 import { ThemeProvider } from "@mui/material";
-import { theme } from "ui/components/theme/theme-default";
+import { theme } from "ui/components/Theme/theme-default";
 
 describe("CardAmount", () => {
   test("a correct CardAmount render", () => {

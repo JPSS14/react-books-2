@@ -1,5 +1,5 @@
 import { Book, Favorites, Home } from "ui/pages";
-import { RBooksThemeProvider } from "ui/components/theme";
+import { RBooksThemeProvider } from "ui/components/Theme";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 export const App = () => {

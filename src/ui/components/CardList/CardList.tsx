@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import { BookItemResponseMapper } from "service/types";
-import { Card } from "../card";
-import { CardListContainerStyle } from "./card-list.style";
+import { Card } from "../Card";
+import { CardListContainerStyle } from "./CardList.style";
 
 interface CardListProps {
   items: BookItemResponseMapper[];

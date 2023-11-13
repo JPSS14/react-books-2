@@ -1,11 +1,11 @@
 import { Box } from "@mui/material";
 import { BookItemResponseMapper } from "service/types";
-import { CardContainerStyle, CardContentStyle } from "./card.style";
-import { CardHeader } from "./card-header";
-import { CardImage } from "./card-image";
-import { CardAmount } from "./card-amount";
-import { CardCTA } from "./card-cta";
-import { CardFooter } from "./card-footer";
+import { CardContainerStyle, CardContentStyle } from "./Card.style";
+import { CardHeader } from "./CardHeader";
+import { CardImage } from "./CardImage";
+import { CardAmount } from "./CardAmount";
+import { CardCTA } from "./CardCTA";
+import { CardFooter } from "./CardFooter";
 
 interface CardProps {
   item: BookItemResponseMapper;

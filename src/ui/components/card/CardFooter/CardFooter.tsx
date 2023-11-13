@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { CardFooterStyle } from "./card-footer.style";
+import { CardFooterStyle } from "./CardFooter.style";
 
 interface CardFooterProps {
   publishedDate: string;

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Box, Button, IconButton } from "@mui/material";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import StarIcon from "@mui/icons-material/Star";
-import { CardCTAStyle } from "./card-cta.style";
+import { CardCTAStyle } from "./CardCTA.style";
 import { BookItemResponseMapper } from "service/types";
 import { useFavoriteContext } from "contexts/favorite-context/favorite-context";
 import { useNavigate } from "react-router-dom";

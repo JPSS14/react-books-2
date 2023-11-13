@@ -1,6 +1,6 @@
 import { Box, IconButton, Typography } from "@mui/material";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import { sectionHeaderStyle } from "./section-header.style";
+import { sectionHeaderStyle } from "./SectionHeader.style";
 import { useNavigate } from "react-router-dom";
 
 export const SectionHeader = () => {

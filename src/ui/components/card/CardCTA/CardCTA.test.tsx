@@ -1,8 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { ThemeProvider } from "@mui/material";
-import { theme } from "ui/components/theme/theme-default";
-import { CardCTA } from "./card-cta";
+import { theme } from "ui/components/Theme/theme-default";
+import { CardCTA } from "./CardCTA";
 import { FavoriteContextProvider } from "contexts/favorite-context/favorite-context";
 
 // jest.mock("contexts/favorite-context/favorite-context", () => ({

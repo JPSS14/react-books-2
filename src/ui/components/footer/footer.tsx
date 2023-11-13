@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { FooterContainerStyle } from "./footer.style";
+import { FooterContainerStyle } from "./Footer.style";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {

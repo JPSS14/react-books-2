@@ -1,7 +1,7 @@
 import { SearchContextProvider } from "contexts/search-context/search-context";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { App } from "ui/components/app";
+import { App } from "ui/components/App";
 import reportWebVitals from "./reportWebVitals";
 import { FavoriteContextProvider } from "contexts/favorite-context/favorite-context";
 

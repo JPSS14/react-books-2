@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { ThemeProvider } from "@mui/material";
-import { theme } from "ui/components/theme/theme-default";
-import { CardFooter } from "./card-footer";
+import { theme } from "ui/components/Theme/theme-default";
+import { CardFooter } from "./CardFooter";
 
 describe("CardFooter test", () => {
   test("a correct CardFooter render", () => {

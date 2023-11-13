@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { CardTitleStyle } from "./card-header.style";
+import { CardTitleStyle } from "./CardHeader.style";
 
 interface CardHeaderProps {
   title: string;

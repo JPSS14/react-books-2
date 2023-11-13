@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { CardImgContainerStyle, CardWithouImgStyle } from "./card-image.style";
+import { CardImgContainerStyle, CardWithouImgStyle } from "./CardImage.style";
 
 interface CardImageProps {
   image?: string;

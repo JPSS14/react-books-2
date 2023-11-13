@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Box } from "@mui/material";
 import { Button, Input } from "ui/components";
-import { searchStyle } from "./search.style";
+import { searchStyle } from "./Search.style";
 import StarIcon from "@mui/icons-material/Star";
 import SearchIcon from "@mui/icons-material/Search";
 import { getSearch } from "service/search.service";

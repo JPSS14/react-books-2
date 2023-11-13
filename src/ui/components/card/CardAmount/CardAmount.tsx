@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { CardAmountStyle } from "./card-amount.style";
+import { CardAmountStyle } from "./CardAmount.style";
 
 interface CardAmountProps {
   price?: string;
