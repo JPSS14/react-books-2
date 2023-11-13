@@ -1,14 +1,11 @@
 import { Box } from "@mui/material";
 import { BookItemResponseMapper } from "service/types";
-import {
-  CardContainerStyle,
-  CardContentStyle,
-  CardFooterStyle,
-} from "./card.style";
+import { CardContainerStyle, CardContentStyle } from "./card.style";
 import { CardHeader } from "./card-header";
 import { CardImage } from "./card-image";
 import { CardAmount } from "./card-amount";
 import { CardCTA } from "./card-cta";
+import { CardFooter } from "./card-footer";
 
 interface CardProps {
   item: BookItemResponseMapper;
@@ -26,9 +23,7 @@ export const Card = ({ item }: CardProps) => {
         <CardAmount price={item.saleInfo.listPrice?.amount} />
         <CardCTA item={item} />
       </Box>
-      <Box sx={CardFooterStyle} component="footer">
-        Publicado: {item.volumeInfo.publishedDate}
-      </Box>
+      <CardFooter publishedDate={item.volumeInfo.publishedDate} />
     </Box>
   );
 };
