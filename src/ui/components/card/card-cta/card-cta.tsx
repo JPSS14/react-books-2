@@ -45,13 +45,19 @@ export const CardCTA = ({ item }: CardCTAProps) => {
       </Button>
       {isFavorite || item.favorite ? (
         <Box className="favorite__container">
-          <IconButton onClick={() => handleRemoveFavorite(item)}>
+          <IconButton
+            onClick={() => handleRemoveFavorite(item)}
+            data-testid="removeFavoriteButton"
+          >
             <StarIcon />
           </IconButton>
         </Box>
       ) : (
         <Box className="favorite__container">
-          <IconButton onClick={() => handleAddFavorite(item)}>
+          <IconButton
+            onClick={() => handleAddFavorite(item)}
+            data-testid="addFavoriteButton"
+          >
             <StarOutlineIcon />
           </IconButton>
         </Box>
