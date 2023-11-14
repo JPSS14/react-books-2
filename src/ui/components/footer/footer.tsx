@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <Box sx={FooterContainerStyle}>
+    <Box sx={FooterContainerStyle} component="footer">
       <Typography component="h1">
         <Link to="/react-books-2">
           React <Box component="span">Books</Box> 2
