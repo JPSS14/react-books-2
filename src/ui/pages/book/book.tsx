@@ -4,7 +4,7 @@ import { SectionHeader } from "ui/components";
 export const Book = () => {
   return (
     <Box>
-      <SectionHeader />
+      <SectionHeader title="Titulo do livro?" backToHome />
       <h1>Book </h1>
     </Box>
   );

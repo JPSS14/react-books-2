@@ -7,7 +7,7 @@ export const Favorites = () => {
   return (
     <Layout>
       <Box>
-        <SectionHeader />
+        <SectionHeader title="Meus Favoritos" backToHome />
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <CardList items={favoriteList} />
         </Box>
