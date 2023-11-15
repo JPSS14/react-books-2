@@ -9,21 +9,23 @@ import { CardFooter } from "./CardFooter";
 
 interface CardProps {
   item: BookItemResponseMapper;
+  blank?: boolean;
 }
 
-export const Card = ({ item }: CardProps) => {
+export const Card = ({ item, blank }: CardProps) => {
   return (
     <Box sx={CardContainerStyle} component="article">
-      <CardHeader title={item.volumeInfo.title} />
+      <CardHeader title={item.volumeInfo.title} blank={blank} />
       <Box sx={CardContentStyle}>
         <CardImage
           image={item.volumeInfo.imageLinks?.thumbnail}
           title={item.volumeInfo.title}
+          blank={blank}
         />
-        <CardAmount price={item.saleInfo.listPrice?.amount} />
-        <CardCTA item={item} />
+        <CardAmount price={item.saleInfo.listPrice?.amount} blank={blank} />
+        <CardCTA item={item} blank={blank} />
       </Box>
-      <CardFooter publishedDate={item.volumeInfo.publishedDate} />
+      <CardFooter publishedDate={item.volumeInfo.publishedDate} blank={blank} />
     </Box>
   );
 };

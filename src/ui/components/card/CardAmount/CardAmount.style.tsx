@@ -7,5 +7,6 @@ export const CardAmountStyle: SxProps<Theme> = (theme) => {
     fontSize: "1.3rem",
     textAlign: "center",
     fontWeight: 700,
+    minHeight: "31.2px",
   };
 };

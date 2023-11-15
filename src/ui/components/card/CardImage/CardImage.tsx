@@ -1,16 +1,20 @@
 import { Box, Typography } from "@mui/material";
 import { CardImgContainerStyle, CardWithouImgStyle } from "./CardImage.style";
+import { CardBlankContent } from "../CardBlankContent";
 
 interface CardImageProps {
   image?: string;
   title: string;
+  blank?: boolean;
 }
 
 export const CardImage = (props: CardImageProps) => {
-  const { title, image } = props;
+  const { title, image, blank } = props;
   return (
     <Box sx={CardImgContainerStyle}>
-      {image ? (
+      {blank ? (
+        <CardBlankContent />
+      ) : image ? (
         <img src={image} alt={title} title={title} />
       ) : (
         <Box sx={CardWithouImgStyle}>

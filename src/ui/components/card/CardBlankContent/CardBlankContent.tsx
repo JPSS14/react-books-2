@@ -12,7 +12,6 @@ export const CardBlankContent = () => {
           <Box className="blank-text">Descubra seu próximo livro favorito!</Box>
         </Box>
       </Link>
-      <Box></Box>
     </Box>
   );
 };

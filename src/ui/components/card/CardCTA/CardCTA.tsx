@@ -9,9 +9,10 @@ import { useNavigate } from "react-router-dom";
 
 interface CardCTAProps {
   item: BookItemResponseMapper;
+  blank?: boolean;
 }
 
-export const CardCTA = ({ item }: CardCTAProps) => {
+export const CardCTA = ({ item, blank }: CardCTAProps) => {
   const { handleSaveFavorite, handleDeleteFavorite } = useFavoriteContext();
   const [isFavorite, setIsFavorite] = useState(false);
   const history = useNavigate();
@@ -38,12 +39,24 @@ export const CardCTA = ({ item }: CardCTAProps) => {
     history(`/book/${id}`);
   };
 
+  const handleDiscover = () => {
+    history("/react-books-2");
+  };
+
   return (
     <Box sx={CardCTAStyle}>
-      <Button color="primary" onClick={() => handleSeeMore(item.id)}>
-        Ver mais
-      </Button>
-      {isFavorite || item.favorite ? (
+      {blank ? (
+        <Button color="primary" onClick={() => handleDiscover()}>
+          Descobrir
+        </Button>
+      ) : (
+        <Button color="primary" onClick={() => handleSeeMore(item.id)}>
+          Ver mais
+        </Button>
+      )}
+      {blank ? (
+        ""
+      ) : isFavorite || item.favorite ? (
         <Box className="favorite__container">
           <IconButton
             onClick={() => handleRemoveFavorite(item)}
