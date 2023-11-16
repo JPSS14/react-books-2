@@ -1,9 +1,9 @@
 import { responseBookMock } from "./responseBook.mock";
-import { responseBookMapper } from "./search.mapper";
+import { responseBooksMapper } from "./search.mapper";
 
 describe("Test responseBookMapper", () => {
   test("A correct test", () => {
-    expect(responseBookMapper(responseBookMock)).toStrictEqual({
+    expect(responseBooksMapper(responseBookMock)).toStrictEqual({
       kind: "books#volumes",
       totalItems: 1,
       items: [
