@@ -4,6 +4,7 @@ import { ThemeProvider } from "@mui/material";
 import { theme } from "ui/components/Theme/theme-default";
 import { CardCTA } from "./CardCTA";
 import { FavoriteContextProvider } from "contexts/favorite-context/favorite-context";
+import { SearchContextProvider } from "contexts/search-context/search-context";
 
 // jest.mock("contexts/favorite-context/favorite-context", () => ({
 //   useFavoriteContext: jest.fn().mockReturnValue({
@@ -121,13 +122,15 @@ describe("CardCTA", () => {
     };
 
     render(
-      <FavoriteContextProvider>
-        <ThemeProvider theme={theme}>
-          <MemoryRouter>
-            <CardCTA item={mockItem} />
-          </MemoryRouter>
-        </ThemeProvider>
-      </FavoriteContextProvider>
+      <SearchContextProvider>
+        <FavoriteContextProvider>
+          <ThemeProvider theme={theme}>
+            <MemoryRouter>
+              <CardCTA item={mockItem} />
+            </MemoryRouter>
+          </ThemeProvider>
+        </FavoriteContextProvider>
+      </SearchContextProvider>
     );
 
     expect(screen.getByText("Ver mais")).toBeInTheDocument();
@@ -246,13 +249,15 @@ describe("CardCTA", () => {
     };
 
     render(
-      <FavoriteContextProvider>
-        <ThemeProvider theme={theme}>
-          <MemoryRouter>
-            <CardCTA item={mockItem} />
-          </MemoryRouter>
-        </ThemeProvider>
-      </FavoriteContextProvider>
+      <SearchContextProvider>
+        <FavoriteContextProvider>
+          <ThemeProvider theme={theme}>
+            <MemoryRouter>
+              <CardCTA item={mockItem} />
+            </MemoryRouter>
+          </ThemeProvider>
+        </FavoriteContextProvider>
+      </SearchContextProvider>
     );
 
     expect(screen.getByText("Ver mais")).toBeInTheDocument();
