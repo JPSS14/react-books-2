@@ -12,7 +12,11 @@ export const CardList = ({ items }: CardListProps) => {
     <Grid container sx={CardListContainerStyle} component="ul">
       {items.map((item, key) => (
         <Grid key={key} component="li">
-          <Card item={item} key={item.id} />
+          {item.volumeInfo.title ? (
+            <Card item={item} key={item.id} />
+          ) : (
+            <Card item={item} key={key} blank />
+          )}
         </Grid>
       ))}
     </Grid>

@@ -1,6 +1,7 @@
 import { useSearchContext } from "contexts/search-context/search-context";
 import { createContext, useContext, useState, useEffect } from "react";
 import { BookItemResponseMapper } from "service/types";
+import { blankBook } from "constants/blank-book";
 
 type FavoriteContextData = {
   favoriteList: BookItemResponseMapper[];
@@ -25,20 +26,30 @@ export const FavoriteContextProvider = ({
   const [filedListResult, setFiledListResult] = useState<
     BookItemResponseMapper[]
   >([]);
-  const [favoriteList, setFavoriteList] = useState<BookItemResponseMapper[]>(
-    []
-  );
+  const [favoriteList, setFavoriteList] = useState<BookItemResponseMapper[]>([
+    blankBook,
+    blankBook,
+    blankBook,
+    blankBook,
+    blankBook,
+    blankBook,
+    blankBook,
+    blankBook,
+  ]);
 
   const handleSaveFavorite = (book: BookItemResponseMapper) => {
-    setFavoriteList([...favoriteList, book]);
+    setFavoriteList([book, ...favoriteList]);
+    setFavoriteList((prev) => prev.slice(0, -1));
   };
 
   const handleDeleteFavorite = (book: BookItemResponseMapper) => {
     const removedFavorite = favoriteList.filter((item) => item.id !== book.id);
+    removedFavorite.push(blankBook);
     setFavoriteList(removedFavorite);
   };
 
   useEffect(() => {
+    console.log("useEffect favorite");
     if (paginatedBooksResult?.length) {
       if (favoriteList.length) {
         const result = paginatedBooksResult?.map((item) => {
