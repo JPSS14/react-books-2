@@ -11,6 +11,8 @@ type SearchContextData = {
     _event: React.ChangeEvent<unknown>,
     value: number
   ) => void;
+  activeBook: BookItemResponseMapper;
+  setActiveBook: (book: BookItemResponseMapper) => void;
 };
 
 export const SearchContext = createContext({} as SearchContextData);
@@ -29,6 +31,7 @@ export const SearchContextProvider = ({
   const [paginatedBooksResult, setPaginatedBooksResult] = useState(
     resultSearchBook.items || []
   );
+  const [activeBook, setActiveBook] = useState({} as BookItemResponseMapper);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -70,6 +73,8 @@ export const SearchContextProvider = ({
         paginatedBooksResult,
         handleChangePagination,
         totalPage,
+        activeBook,
+        setActiveBook,
       }}
     >
       {children}

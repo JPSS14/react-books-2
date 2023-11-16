@@ -6,6 +6,7 @@ import { CardCTAStyle } from "./CardCTA.style";
 import { BookItemResponseMapper } from "service/types";
 import { useFavoriteContext } from "contexts/favorite-context/favorite-context";
 import { useNavigate } from "react-router-dom";
+import { useSearchContext } from "contexts/search-context/search-context";
 
 interface CardCTAProps {
   item: BookItemResponseMapper;
@@ -13,6 +14,7 @@ interface CardCTAProps {
 }
 
 export const CardCTA = ({ item, blank }: CardCTAProps) => {
+  const { setActiveBook } = useSearchContext();
   const { handleSaveFavorite, handleDeleteFavorite } = useFavoriteContext();
   const [isFavorite, setIsFavorite] = useState(false);
   const history = useNavigate();
@@ -35,8 +37,9 @@ export const CardCTA = ({ item, blank }: CardCTAProps) => {
     handleDeleteFavorite(isFavoriteItem);
   };
 
-  const handleSeeMore = (id: string) => {
-    history(`/book/${id}`);
+  const handleSeeMore = (item: BookItemResponseMapper) => {
+    history(`/book/${item.id}`);
+    setActiveBook(item);
   };
 
   const handleDiscover = () => {
@@ -50,7 +53,7 @@ export const CardCTA = ({ item, blank }: CardCTAProps) => {
           Descobrir
         </Button>
       ) : (
-        <Button color="primary" onClick={() => handleSeeMore(item.id)}>
+        <Button color="primary" onClick={() => handleSeeMore(item)}>
           Ver mais
         </Button>
       )}
