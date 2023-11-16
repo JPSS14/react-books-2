@@ -25,7 +25,7 @@ export const Card = ({ item, blank }: CardProps) => {
         <CardAmount price={item.saleInfo.listPrice?.amount} blank={blank} />
         <CardCTA item={item} blank={blank} />
       </Box>
-      <CardFooter publishedDate={item.volumeInfo.publishedDate} blank={blank} />
+      <CardFooter publisher={item.volumeInfo?.publisher} blank={blank} />
     </Box>
   );
 };

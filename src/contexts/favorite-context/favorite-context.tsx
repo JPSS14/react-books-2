@@ -49,7 +49,6 @@ export const FavoriteContextProvider = ({
   };
 
   useEffect(() => {
-    console.log("useEffect favorite");
     if (paginatedBooksResult?.length) {
       if (favoriteList.length) {
         const result = paginatedBooksResult?.map((item) => {

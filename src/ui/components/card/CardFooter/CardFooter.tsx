@@ -2,17 +2,17 @@ import { Box } from "@mui/material";
 import { CardFooterStyle } from "./CardFooter.style";
 
 interface CardFooterProps {
-  publishedDate: string;
+  publisher?: string;
   blank?: boolean;
 }
 
-export const CardFooter = ({ publishedDate, blank }: CardFooterProps) => {
+export const CardFooter = ({ publisher, blank }: CardFooterProps) => {
   return (
     <Box sx={CardFooterStyle} component="footer">
       {blank ? (
         <Box component="span">React Books 2</Box>
       ) : (
-        <Box component="span">Publicado: {publishedDate}</Box>
+        <Box component="span">Editora: {publisher}</Box>
       )}
     </Box>
   );

@@ -5,14 +5,14 @@ import { CardFooter } from "./CardFooter";
 
 describe("CardFooter test", () => {
   test("a correct CardFooter render", () => {
-    const mockPublishedDate = "25/11/2019";
+    const mockPublisher = "Marvel";
     render(
       <ThemeProvider theme={theme}>
-        <CardFooter publishedDate={mockPublishedDate} />
+        <CardFooter publisher={mockPublisher} />
       </ThemeProvider>
     );
 
-    const renderCardFooter = screen.getByText("Publicado: 25/11/2019");
+    const renderCardFooter = screen.getByText("Editora: Marvel");
 
     expect(renderCardFooter).toBeInTheDocument();
   });
