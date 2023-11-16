@@ -13,5 +13,11 @@ export const CardFooterStyle: SxProps<Theme> = (theme) => {
     width: "100%",
     borderRadius: "0 0 10px 10px",
     borderTop: `1px solid ${rbooks.primaryColor}`,
+    height: "40px",
+    whiteSpace: "nowrap",
+    "& .publisher": {
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+    },
   };
 };

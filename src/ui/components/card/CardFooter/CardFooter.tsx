@@ -8,11 +8,23 @@ interface CardFooterProps {
 
 export const CardFooter = ({ publisher, blank }: CardFooterProps) => {
   return (
-    <Box sx={CardFooterStyle} component="footer">
+    <Box
+      sx={CardFooterStyle}
+      component="footer"
+      title={
+        publisher
+          ? `Editora: ${publisher}`
+          : blank
+          ? "React Books 2"
+          : "Editora: Desconhecida"
+      }
+    >
       {blank ? (
-        <Box component="span">React Books 2</Box>
+        <Box className="publisher">React Books 2</Box>
       ) : (
-        <Box component="span">Editora: {publisher}</Box>
+        <Box className="publisher">
+          Editora: {publisher ? publisher : "Desconhecidas"}
+        </Box>
       )}
     </Box>
   );
