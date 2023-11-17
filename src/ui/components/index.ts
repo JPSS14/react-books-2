@@ -3,6 +3,7 @@ export { Header } from "./Header";
 export { SectionHeader } from "./SectionHeader";
 export { Input } from "./Input";
 export { Layout } from "./Layout";
+export { Loading } from "./Loading";
 export { Search } from "./Search";
 export { Card } from "./Card";
 export { CardList } from "./CardList";
