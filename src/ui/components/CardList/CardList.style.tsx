@@ -8,7 +8,7 @@ export const CardListContainerStyle: SxProps<Theme> = (theme) => {
       listStyle: "none",
     },
     margin: 0,
-    "@media(max-width: 1262.4px)": {
+    "@media(max-width: 1263.2px)": {
       maxWidth: "948px",
     },
     "@media(max-width: 948px)": {
