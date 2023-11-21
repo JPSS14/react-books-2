@@ -1,4 +1,12 @@
-import { useState, useEffect, useContext, createContext } from "react";
+import { useMediaQuery } from "@mui/material";
+import {
+  useState,
+  useEffect,
+  useContext,
+  createContext,
+  useCallback,
+} from "react";
+import { getSearch } from "service/search.service";
 import { BookItemResponseMapper, ResponseBooksMapper } from "service/types";
 
 type SearchContextData = {
@@ -11,8 +19,9 @@ type SearchContextData = {
     _event: React.ChangeEvent<unknown>,
     value: number
   ) => void;
-  activeBook: BookItemResponseMapper;
+  activeBook?: BookItemResponseMapper;
   setActiveBook: (book: BookItemResponseMapper) => void;
+  searchBook: (search: string) => void;
 };
 
 export const SearchContext = createContext({} as SearchContextData);
@@ -31,28 +40,43 @@ export const SearchContextProvider = ({
   const [paginatedBooksResult, setPaginatedBooksResult] = useState(
     resultSearchBook.items || []
   );
-  const [activeBook, setActiveBook] = useState({} as BookItemResponseMapper);
+  const [activeBook, setActiveBook] = useState<BookItemResponseMapper>();
+  const isSmallScreen = useMediaQuery("(max-width:1265px)");
+
+  const itemPerPage = isSmallScreen ? 6 : 8;
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
-  useEffect(() => {
-    if (resultSearchBook.items) {
-      setPaginatedBooksResult(resultSearchBook.items.slice(0, 8));
-    }
-  }, [resultSearchBook]);
-
   let totalPage =
-    resultSearchBook.items && Math.ceil(resultSearchBook.items.length / 8);
+    resultSearchBook.items &&
+    Math.ceil(resultSearchBook.items.length / itemPerPage);
+
+  const lastPagePagination = useCallback(() => {
+    setPage(5);
+  }, [setPage]);
+
+  useEffect(() => {
+    if (resultSearchBook.items?.length) {
+      const paginatedItems = resultSearchBook.items.slice(
+        (page - 1) * itemPerPage,
+        (page - 1) * itemPerPage + itemPerPage
+      );
+      setPaginatedBooksResult(paginatedItems);
+      if (itemPerPage === 8 && totalPage < page) {
+        lastPagePagination();
+      }
+    }
+  }, [resultSearchBook, itemPerPage, page, totalPage, lastPagePagination]);
 
   const handleChangePagination = (
     _event: React.ChangeEvent<unknown>,
     value: number
   ) => {
     const page = value - 1;
-    const start = page * 8;
-    const end = start + 8;
+    const start = page * itemPerPage;
+    const end = start + itemPerPage;
 
     if (resultSearchBook?.items) {
       const paginatedItems = resultSearchBook.items.slice(start, end);
@@ -62,6 +86,16 @@ export const SearchContextProvider = ({
 
     setPage(value);
     scrollToTop();
+  };
+
+  const searchBook = (search: string) => {
+    if (search) {
+      getSearch(search)
+        .then((item) => {
+          setResultSearchBook(item);
+        })
+        .then(() => setPage(1));
+    }
   };
 
   return (
@@ -75,6 +109,7 @@ export const SearchContextProvider = ({
         totalPage,
         activeBook,
         setActiveBook,
+        searchBook,
       }}
     >
       {children}

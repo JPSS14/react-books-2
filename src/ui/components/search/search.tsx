@@ -4,25 +4,17 @@ import { Button, Input } from "ui/components";
 import { searchStyle } from "./Search.style";
 import StarIcon from "@mui/icons-material/Star";
 import SearchIcon from "@mui/icons-material/Search";
-import { getSearch } from "service/search.service";
 import { useSearchContext } from "contexts/search-context/search-context";
 import { useNavigate } from "react-router-dom";
 
 export const Search = () => {
-  const { setResultSearchBook } = useSearchContext();
+  const { searchBook } = useSearchContext();
   const history = useNavigate();
   const [search, setSearch] = useState("");
-  const searchBook = () => {
-    if (search) {
-      getSearch(search).then((item) => {
-        setResultSearchBook(item);
-      });
-    }
-  };
 
   const inputEnter = (input: string) => {
     if (input === "Enter") {
-      searchBook();
+      searchBook(search);
     }
   };
 
@@ -43,7 +35,7 @@ export const Search = () => {
         onKeyUp={(e) => inputEnter(e.key)}
         placeholder="Encontre seu livro"
       />
-      <Button color="primary" onClick={() => searchBook()}>
+      <Button color="primary" onClick={() => searchBook(search)}>
         <SearchIcon />
         <Box component="span" className="button_title">
           Pesquisar

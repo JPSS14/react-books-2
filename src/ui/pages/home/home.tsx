@@ -6,7 +6,7 @@ import { Pagination } from "@mui/material";
 import { useFavoriteContext } from "contexts/favorite-context/favorite-context";
 
 export const Home = () => {
-  const { page, handleChangePagination } = useSearchContext();
+  const { page, handleChangePagination, totalPage } = useSearchContext();
   const { filedListResult } = useFavoriteContext();
 
   return (
@@ -33,7 +33,11 @@ export const Home = () => {
       </Box>
       {filedListResult?.length ? (
         <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Pagination count={5} page={page} onChange={handleChangePagination} />
+          <Pagination
+            count={totalPage}
+            page={page}
+            onChange={handleChangePagination}
+          />
         </Box>
       ) : (
         ""
