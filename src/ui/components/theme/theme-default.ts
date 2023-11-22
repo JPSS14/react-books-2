@@ -70,6 +70,13 @@ export const theme = createTheme({
     },
     MuiButton: {
       styleOverrides: {
+        outlined: {
+          color: "#8C6645",
+          borderColor: "#8C6645",
+          "&:hover": {
+            borderColor: "#995243",
+          },
+        },
         textPrimary: {
           background: "#8C6645",
           color: "#fff",
