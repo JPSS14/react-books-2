@@ -18,9 +18,9 @@ describe("currencyConverter test", () => {
   });
 });
 
-// describe("addCommaArray", () => {
-//   test("a correct addCommaArray test", () => {
-//     const value = ["Federer", "Nadal", "Djockovic", "Murray"];
-//     expect(addCommaArray(value)).toBe("Federer, Nadal, Djockovic, Murray");
-//   });
-// });
+describe("addCommaArray", () => {
+  test("a correct addCommaArray test", () => {
+    const value = ["Federer", "Nadal", "Djockovic", "Murray"];
+    expect(addCommaArray(value)).toBe("Federer, Nadal, Djockovic, Murray");
+  });
+});
