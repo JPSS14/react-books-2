@@ -6,7 +6,7 @@ export const blankBook = {
   selfLink: "",
   volumeInfo: {
     title: "",
-    authors: [""],
+    authors: "",
     publisher: "",
     publishedDate: "",
     description: "",

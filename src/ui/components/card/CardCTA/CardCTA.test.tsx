@@ -24,7 +24,7 @@ describe("CardCTA", () => {
       selfLink: "https://www.googleapis.com/books/v1/volumes/R7KuDwAAQBAJ",
       volumeInfo: {
         title: "O Senhor dos Anéis: A Sociedade do Anel",
-        authors: ["J.R.R. Tolkien"],
+        authors: "J.R.R. Tolkien",
         publisher: "HARLEQUIN",
         publishedDate: "25/11/2019",
         description:
@@ -151,7 +151,7 @@ describe("CardCTA", () => {
       selfLink: "https://www.googleapis.com/books/v1/volumes/R7KuDwAAQBAJ",
       volumeInfo: {
         title: "O Senhor dos Anéis: A Sociedade do Anel",
-        authors: ["J.R.R. Tolkien"],
+        authors: "J.R.R. Tolkien",
         publisher: "HARLEQUIN",
         publishedDate: "25/11/2019",
         description:

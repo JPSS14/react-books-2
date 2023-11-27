@@ -15,7 +15,7 @@ describe("search service tests", () => {
           selfLink: "https://www.googleapis.com/books/v1/volumes/yodhDwAAQBAJ",
           volumeInfo: {
             title: "J.R.R. Tolkien. Uma biografia",
-            authors: ["Humphrey Carpenter"],
+            authors: "Humphrey Carpenter",
             publisher: "HarperCollins Brasil",
             publishedDate: "01/08/2018",
             description:
@@ -127,7 +127,7 @@ describe("search service tests", () => {
       selfLink: "https://www.googleapis.com/books/v1/volumes/yodhDwAAQBAJ",
       volumeInfo: {
         title: "J.R.R. Tolkien. Uma biografia",
-        authors: ["Humphrey Carpenter"],
+        authors: "Humphrey Carpenter",
         publisher: "HarperCollins Brasil",
         publishedDate: "01/08/2018",
         description:

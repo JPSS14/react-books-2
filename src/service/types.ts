@@ -92,7 +92,7 @@ export type BookItemResponseMapper = {
   selfLink: string;
   volumeInfo: {
     title: string;
-    authors: string[];
+    authors: string;
     publisher?: string;
     publishedDate: string;
     description?: string;

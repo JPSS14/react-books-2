@@ -1,4 +1,8 @@
-import { currencyConverter, dateConverter } from "helpers/utils/utils";
+import {
+  addCommaArray,
+  currencyConverter,
+  dateConverter,
+} from "helpers/utils/utils";
 import { BookItemResponse, ResponseBooks } from "./types";
 
 export const responseBookMapper = (item: BookItemResponse) => {
@@ -10,7 +14,7 @@ export const responseBookMapper = (item: BookItemResponse) => {
     selfLink: item.selfLink,
     volumeInfo: {
       title: item.volumeInfo.title,
-      authors: item.volumeInfo.authors,
+      authors: addCommaArray(item.volumeInfo.authors),
       publisher: item.volumeInfo.publisher,
       publishedDate: dateConverter(item.volumeInfo.publishedDate),
       description: item.volumeInfo.description,
@@ -93,7 +97,7 @@ export const responseBooksMapper = (data: ResponseBooks) => {
       selfLink: item.selfLink,
       volumeInfo: {
         title: item.volumeInfo.title,
-        authors: item.volumeInfo.authors,
+        authors: addCommaArray(item.volumeInfo.authors),
         publisher: item.volumeInfo.publisher,
         publishedDate: dateConverter(item.volumeInfo.publishedDate),
         description: item.volumeInfo.description,

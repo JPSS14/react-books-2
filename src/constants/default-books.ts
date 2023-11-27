@@ -7,7 +7,7 @@ export const defaultBooks = [
     selfLink: "https://www.googleapis.com/books/v1/volumes/R7KuDwAAQBAJ",
     volumeInfo: {
       title: "O Senhor dos Anéis: A Sociedade do Anel",
-      authors: ["J.R.R. Tolkien"],
+      authors: "J.R.R. Tolkien",
       publisher: "HARLEQUIN",
       publishedDate: "25/11/2019",
       description:
@@ -111,7 +111,7 @@ export const defaultBooks = [
     selfLink: "https://www.googleapis.com/books/v1/volumes/TnXrDAAAQBAJ",
     volumeInfo: {
       title: "Warcraft: livro do filme oficial",
-      authors: ["Christie Golden"],
+      authors: "Christie Golden",
       publisher: "Galera",
       publishedDate: "26/08/2016",
       description:
@@ -216,7 +216,7 @@ export const defaultBooks = [
     selfLink: "https://www.googleapis.com/books/v1/volumes/7S6OAwAAQBAJ",
     volumeInfo: {
       title: "Tarkin: Star Wars",
-      authors: ["James Luceno"],
+      authors: "James Luceno",
       publisher: "Del Rey",
       publishedDate: "04/11/2014",
       description:
@@ -320,7 +320,7 @@ export const defaultBooks = [
     selfLink: "https://www.googleapis.com/books/v1/volumes/m3lvDwAAQBAJ",
     volumeInfo: {
       title: "Fogo & Sangue – Volume 1",
-      authors: ["George R. R. Martin"],
+      authors: "George R. R. Martin",
       publisher: "Suma",
       publishedDate: "20/11/2018",
       description:
@@ -427,7 +427,7 @@ export const defaultBooks = [
     volumeInfo: {
       title: "The World of the Witcher",
       subtitle: "Video Game Compendium",
-      authors: ["CD Projekt Red"],
+      authors: "CD Projekt Red",
       publisher: "Dark Horse Comics",
       publishedDate: "19/05/2015",
       description:
@@ -546,7 +546,7 @@ export const defaultBooks = [
     selfLink: "https://www.googleapis.com/books/v1/volumes/AfGEDwAAQBAJ",
     volumeInfo: {
       title: "Sherlock Holmes: Obra completa",
-      authors: ["Arthur Conan Doyle"],
+      authors: "Arthur Conan Doyle",
       publisher: "HarperCollins Brasil",
       publishedDate: "15/05/2015",
       description:
@@ -651,7 +651,7 @@ export const defaultBooks = [
     volumeInfo: {
       title: "Clean Code",
       subtitle: "A Handbook of Agile Software Craftsmanship",
-      authors: ["Robert C. Martin"],
+      authors: "Robert C. Martin",
       publisher: "Pearson Education",
       publishedDate: "01/08/2008",
       description:
@@ -756,7 +756,7 @@ export const defaultBooks = [
     volumeInfo: {
       title: "As armas da persuasão",
       subtitle: "Como influenciar e não se deixar influenciar",
-      authors: ["Robert B. Cialdini"],
+      authors: "Robert B. Cialdini",
       publisher: "Sextante",
       publishedDate: "27/08/2013",
       description:
