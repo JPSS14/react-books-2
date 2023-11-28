@@ -23,4 +23,9 @@ describe("addCommaArray", () => {
     const value = ["Federer", "Nadal", "Djockovic", "Murray"];
     expect(addCommaArray(value)).toBe("Federer, Nadal, Djockovic, Murray");
   });
+
+  test("a undefined addCommaArray author case", () => {
+    const value = undefined;
+    expect(addCommaArray(value)).toBe("Desconhecido(a)");
+  });
 });

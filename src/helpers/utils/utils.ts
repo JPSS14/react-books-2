@@ -10,6 +10,9 @@ export const currencyConverter = (value: number) => {
   }).format(value);
 };
 
-export const addCommaArray = (value: string[]) => {
-  return value.join(", ");
+export const addCommaArray = (value?: string[]) => {
+  if (value) {
+    return value.join(", ");
+  }
+  return "Desconhecido(a)";
 };
