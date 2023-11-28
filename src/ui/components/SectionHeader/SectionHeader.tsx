@@ -4,7 +4,7 @@ import { sectionHeaderStyle } from "./SectionHeader.style";
 import { useNavigate } from "react-router-dom";
 
 interface SectionHeaderProps {
-  title: string;
+  title?: string;
   backToHome?: boolean;
 }
 
