@@ -1,6 +1,7 @@
 export { BookDetail } from "./BookDetail";
 export { Button } from "./Button";
 export { Header } from "./Header";
+export { Hr } from "./Hr";
 export { SectionHeader } from "./SectionHeader";
 export { Input } from "./Input";
 export { Layout } from "./Layout";
