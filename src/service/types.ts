@@ -20,6 +20,8 @@ export type BookItemResponse = {
     pageCount: number;
     printType: string;
     categories?: string[];
+    averageRating?: number;
+    ratingsCount?: number;
     maturityRating: string;
     allowAnonLogging: boolean;
     contentVersion: string;
@@ -107,6 +109,8 @@ export type BookItemResponseMapper = {
     pageCount: number;
     printType: string;
     categories?: string[];
+    averageRating?: number;
+    ratingsCount?: number;
     maturityRating: string;
     allowAnonLogging: boolean;
     contentVersion: string;
