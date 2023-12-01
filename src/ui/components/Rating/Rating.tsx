@@ -11,10 +11,10 @@ interface RatingProps extends MuiRatingProps {
 }
 
 export const Rating = (props: RatingProps) => {
-  const { ratingsCount } = props;
+  const { ratingsCount, ...restProps } = props;
   return (
     <Box sx={ratingStyle}>
-      <MuiRating {...props} />
+      <MuiRating {...restProps} />
       <Typography component="p">
         {ratingsCount
           ? ratingsCount > 1
