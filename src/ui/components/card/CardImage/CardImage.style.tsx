@@ -1,19 +1,5 @@
 import { Theme, SxProps } from "@mui/material";
 
-export const CardWithouImgStyle: SxProps<Theme> = (theme) => {
-  const { rbooks } = theme.palette;
-  return {
-    border: `2px solid ${rbooks.primaryColor}`,
-    width: "143px",
-    height: "218px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    color: rbooks.primaryColor,
-    pointerEvents: "none",
-  };
-};
-
 export const CardImgContainerStyle: SxProps<Theme> = (theme) => {
   return {
     display: "flex",

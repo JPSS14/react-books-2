@@ -1,3 +1,4 @@
+export { BlankBook } from "./BlankBook";
 export { BookDetail } from "./BookDetail";
 export { Button } from "./Button";
 export { Header } from "./Header";
