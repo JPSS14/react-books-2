@@ -7,6 +7,7 @@ export { Input } from "./Input";
 export { Layout } from "./Layout";
 export { Loading } from "./Loading";
 export { Search } from "./Search";
+export { Rating } from "./Rating";
 export { Card } from "./Card";
 export { CardList } from "./CardList";
 export { Footer } from "./Footer";
