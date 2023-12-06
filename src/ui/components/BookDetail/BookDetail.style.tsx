@@ -13,15 +13,23 @@ export const bookDetailStyle: SxProps<Theme> = (theme) => {
     ".detail__container": {
       width: "calc(100% - 216px)",
       marginLeft: theme.spacing(2),
-      height: "310.2px",
       ".detail__content": {
         height: "318.2px",
       },
       ".detail__description": {
+        height: "334px",
+        overflow: "hidden",
         ".detail__description-content": {
           height: "154px",
           overflow: "hidden",
           overflowY: "scroll",
+        },
+      },
+      "@media(max-width: 740px)": {
+        width: "100%",
+        marginLeft: "0",
+        ".detail__content": {
+          height: "auto",
         },
       },
     },

@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import { Button } from "ui/components/Button";
 import { bookDetailCTAStyle } from "./BookDetailCTA.style";
 import { Hr } from "ui/components/Hr";
@@ -24,6 +24,8 @@ export const BookDetailCTA = ({
   readLink,
   buyLink,
 }: BookDetailCTAProps) => {
+  const isSmallScreen = useMediaQuery("(max-width:740px)");
+
   const handleReadMore = () => {
     if (readLink) {
       window.open(readLink, "_blank");
@@ -63,6 +65,7 @@ export const BookDetailCTA = ({
         >
           Comprar
         </Button>
+        {isSmallScreen && <Hr isMargin />}
       </Box>
     </Box>
   );

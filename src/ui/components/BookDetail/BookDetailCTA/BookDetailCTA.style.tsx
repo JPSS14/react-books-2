@@ -5,6 +5,7 @@ export const bookDetailCTAStyle: SxProps<Theme> = (theme) => {
     display: "flex",
     flexWrap: "wrap",
     width: "200px",
+    height: "457.8px",
     "& .image__container": {
       display: "flex",
       justifyContent: "center",
@@ -23,6 +24,10 @@ export const bookDetailCTAStyle: SxProps<Theme> = (theme) => {
         textAlign: "center",
         marginTop: theme.spacing(2),
       },
+    },
+    "@media(max-width: 740px)": {
+      width: "100%",
+      height: "auto",
     },
   };
 };

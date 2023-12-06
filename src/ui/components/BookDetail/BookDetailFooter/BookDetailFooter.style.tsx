@@ -9,8 +9,13 @@ export const bookDetailFooterStyle: SxProps<Theme> = () => {
       justifyContent: "initial",
       alignItems: "center",
       textAlign: "center",
+      "& span": {
+        fontWeight: "700",
+        color: "#fff",
+      },
       "& svg": {
         fontSize: "2rem",
+        color: "#fff",
       },
     },
   };
