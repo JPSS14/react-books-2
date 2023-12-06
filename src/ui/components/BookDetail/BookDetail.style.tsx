@@ -31,6 +31,11 @@ export const bookDetailStyle: SxProps<Theme> = (theme) => {
         ".detail__content": {
           height: "auto",
         },
+        ".detail__description": {
+          ".detail__description-content": {
+            height: "246px",
+          },
+        },
       },
     },
   };

@@ -1,5 +1,8 @@
 import { Box, Typography } from "@mui/material";
-import { bookDetailHeaderStyle } from "./BookDetailHeader.style";
+import {
+  bookDetailHeaderStyle,
+  bookDetailSnippetStyle,
+} from "./BookDetailHeader.style";
 
 interface BookDetailHeaderProps {
   title: string;
@@ -13,7 +16,7 @@ export const BookDetailHeader = ({
   return (
     <Box component="header" sx={bookDetailHeaderStyle}>
       <Typography component="h1">{title}</Typography>
-      <Box className="detail__snippet">
+      <Box sx={bookDetailSnippetStyle(textSnippet)}>
         <Typography>{textSnippet}</Typography>
       </Box>
     </Box>

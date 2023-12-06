@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 import { BookItemResponseMapper } from "service/types";
 import { bookDetailStyle } from "./BookDetail.style";
 import { BookDetailCTA } from "./BookDetailCTA";
@@ -12,8 +12,20 @@ interface BookDetailProps {
 }
 
 export const BookDetail = ({ item }: BookDetailProps) => {
+  const isSmallScreen = useMediaQuery("(max-width:740px)");
   return (
     <Box sx={bookDetailStyle} component="article">
+      {isSmallScreen && (
+        <>
+          {" "}
+          <BookDetailHeader
+            title={item.volumeInfo.title}
+            textSnippet={item.searchInfo?.textSnippet}
+          />
+          <Hr isMargin />
+        </>
+      )}
+
       <BookDetailCTA
         image={item.volumeInfo.imageLinks?.thumbnail}
         title={item.volumeInfo.title}
@@ -26,10 +38,12 @@ export const BookDetail = ({ item }: BookDetailProps) => {
       <Box className="detail__container">
         <Box className="detail__content">
           <Box className="detail__description">
-            <BookDetailHeader
-              title={item.volumeInfo.title}
-              textSnippet={item.searchInfo?.textSnippet}
-            />
+            {!isSmallScreen && (
+              <BookDetailHeader
+                title={item.volumeInfo.title}
+                textSnippet={item.searchInfo?.textSnippet}
+              />
+            )}
             <BookDetailContent
               authors={item.volumeInfo.authors}
               publisher={item.volumeInfo.publisher}

@@ -8,8 +8,13 @@ export const bookDetailHeaderStyle: SxProps<Theme> = () => {
       fontSize: "1.3rem",
       color: "#fff",
     },
+  };
+};
 
-    ".detail__snippet": {
+export const bookDetailSnippetStyle =
+  (textSnippet?: string): SxProps<Theme> =>
+  (theme) => {
+    return {
       height: "48px",
       "& p": {
         display: "-webkit-box",
@@ -18,6 +23,9 @@ export const bookDetailHeaderStyle: SxProps<Theme> = () => {
         overflow: "hidden",
         textOverflow: "ellipsis",
       },
-    },
+      "@media(max-width: 740px)": {
+        height: "auto",
+        marginTop: textSnippet ? theme.spacing(1) : "",
+      },
+    };
   };
-};
