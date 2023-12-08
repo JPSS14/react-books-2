@@ -12,4 +12,5 @@ export { Rating } from "./Rating";
 export { Card } from "./Card";
 export { CardList } from "./CardList";
 export { Footer } from "./Footer";
+export { RelatedBooks } from "./RelatedBooks";
 export { RBooksThemeProvider } from "./Theme";
