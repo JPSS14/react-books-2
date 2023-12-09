@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Slider from "react-slick";
 import { defaultBooks } from "constants/default-books";
 import "slick-carousel/slick/slick.css";
@@ -68,14 +68,17 @@ export const RelatedBooks = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 1,
-          className: "teste",
+          className: "mobile",
         },
       },
     ],
   };
 
   return (
-    <Box sx={relatedBooksStyle}>
+    <Box sx={relatedBooksStyle} component="section">
+      <Box component="header" className="related__header">
+        <Typography component="h2">Recomendados</Typography>
+      </Box>
       <Slider {...settings}>
         {defaultBooks.map((item, index) => (
           <Card item={item} key={index} />
