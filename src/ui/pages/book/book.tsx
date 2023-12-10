@@ -1,33 +1,52 @@
 import { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import { useSearchContext } from "contexts/search-context/search-context";
-import { BookDetail, Layout, Loading, SectionHeader } from "ui/components";
-import { getByBookID } from "service/search.service";
+import {
+  BookDetail,
+  Layout,
+  Loading,
+  RelatedBooks,
+  SectionHeader,
+} from "ui/components";
+import { getByAuthor, getByBookID } from "service/search.service";
 import { useParams } from "react-router-dom";
+import { ResponseBooksMapper } from "service/types";
 
 export const Book = () => {
-  const { activeBook } = useSearchContext();
-  const [localActiveBook, setLocalActiveBook] = useState(activeBook);
-  const [loading, setLoading] = useState(false);
+  const { activeBook, setActiveBook } = useSearchContext();
+  const [activeBookLoading, setActiveBookLoading] = useState(false);
+  const [relatedBooksLoading, setRelatedBooksLoading] = useState(false);
+  const [author, setAuthor] = useState({} as ResponseBooksMapper);
 
   const { id } = useParams();
 
   useEffect(() => {
+    console.log("useEffect active book");
     if (!activeBook && id) {
-      setLoading(true);
+      console.log("here");
+      setActiveBookLoading(true);
       getByBookID(id)
         .then((item) => {
-          setLocalActiveBook(item);
+          setActiveBook(item);
         })
-        .finally(() => setLoading(false));
+        .finally(() => setActiveBookLoading(false));
     }
-  }, [id, activeBook]);
+  }, [id, activeBook, setActiveBook]);
+
+  useEffect(() => {
+    if (activeBook) {
+      setRelatedBooksLoading(true);
+      getByAuthor(activeBook?.volumeInfo.authors.split(",")[0])
+        .then((result) => setAuthor(result))
+        .finally(() => setRelatedBooksLoading(false));
+    }
+  }, [activeBook]);
 
   return (
     <Layout>
       <Box component="main">
         <SectionHeader title="Detalhes" backToHome />
-        {loading || !localActiveBook ? (
+        {activeBookLoading || !activeBook ? (
           <Box
             sx={{
               width: "100%",
@@ -41,8 +60,13 @@ export const Book = () => {
           </Box>
         ) : (
           <>
-            <BookDetail item={localActiveBook} />
+            <BookDetail item={activeBook} />
           </>
+        )}
+        {author.items && !relatedBooksLoading ? (
+          <RelatedBooks items={author} />
+        ) : (
+          <Loading />
         )}
       </Box>
     </Layout>

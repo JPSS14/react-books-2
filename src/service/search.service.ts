@@ -19,7 +19,7 @@ export const getSearch = (book: string): Promise<ResponseBooksMapper> => {
 export const getByAuthor = (author: string): Promise<ResponseBooksMapper> => {
   return axios
     .get<ResponseBooks>(
-      `https://www.googleapis.com/books/v1/volumes?q=+inauthor:${author}&maxResults=5`
+      `https://www.googleapis.com/books/v1/volumes?q=+inauthor:${author}&maxResults=9`
     )
     .then((result) => responseBooksMapper(result.data))
     .catch();
