@@ -11,6 +11,7 @@ import {
 import { getByAuthor, getByBookID } from "service/search.service";
 import { useParams } from "react-router-dom";
 import { ResponseBooksMapper } from "service/types";
+import { removeRepeatedBook } from "helpers/utils/utils";
 
 export const Book = () => {
   const { activeBook, setActiveBook } = useSearchContext();
@@ -35,7 +36,7 @@ export const Book = () => {
     if (activeBook) {
       setRelatedBooksLoading(true);
       getByAuthor(activeBook?.volumeInfo.authors.split(",")[0])
-        .then((result) => setAuthor(result))
+        .then((result) => setAuthor(removeRepeatedBook(activeBook.id, result)))
         .finally(() => setRelatedBooksLoading(false));
     }
   }, [activeBook]);
