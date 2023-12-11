@@ -21,9 +21,7 @@ export const Book = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    console.log("useEffect active book");
     if (!activeBook && id) {
-      console.log("here");
       setActiveBookLoading(true);
       getByBookID(id)
         .then((item) => {
@@ -66,7 +64,9 @@ export const Book = () => {
         {author.items && !relatedBooksLoading ? (
           <RelatedBooks items={author} />
         ) : (
-          <Loading />
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Loading />
+          </Box>
         )}
       </Box>
     </Layout>

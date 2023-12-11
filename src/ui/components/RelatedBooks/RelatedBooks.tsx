@@ -11,14 +11,14 @@ interface RelatedBooksProps {
   items: ResponseBooksMapper;
 }
 
-export const RelatedBooks = ({ items }: RelatedBooksProps) => {
+export const RelatedBooks = ({ items: { items } }: RelatedBooksProps) => {
   return (
     <Box sx={relatedBooksStyle} component="section">
       <Box component="header" className="related__header">
         <Typography component="h2">Recomendados</Typography>
       </Box>
       <Slider {...settings}>
-        {items.items.map((item, index) => (
+        {items.map((item, index) => (
           <Card item={item} key={index} />
         ))}
       </Slider>
