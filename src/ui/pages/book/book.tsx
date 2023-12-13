@@ -5,6 +5,7 @@ import {
   BookDetail,
   Layout,
   Loading,
+  NotFoundError,
   RelatedBooks,
   SectionHeader,
 } from "ui/components";
@@ -18,6 +19,7 @@ export const Book = () => {
   const [activeBookLoading, setActiveBookLoading] = useState(false);
   const [relatedBooksLoading, setRelatedBooksLoading] = useState(false);
   const [author, setAuthor] = useState({} as ResponseBooksMapper);
+  const [notFoundBook, setNotFoundBook] = useState(false);
 
   const { id } = useParams();
 
@@ -28,6 +30,7 @@ export const Book = () => {
         .then((item) => {
           setActiveBook(item);
         })
+        .catch(() => setNotFoundBook(true))
         .finally(() => setActiveBookLoading(false));
     }
   }, [id, activeBook, setActiveBook]);
@@ -45,7 +48,9 @@ export const Book = () => {
     <Layout>
       <Box component="main">
         <SectionHeader title="Detalhes" backToHome />
-        {activeBookLoading || !activeBook ? (
+        {notFoundBook ? (
+          <NotFoundError />
+        ) : activeBookLoading || !activeBook ? (
           <Box
             sx={{
               width: "100%",
@@ -64,6 +69,8 @@ export const Book = () => {
         )}
         {author.items && !relatedBooksLoading ? (
           <RelatedBooks items={author} />
+        ) : notFoundBook ? (
+          <></>
         ) : (
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             <Loading />
