@@ -32,7 +32,7 @@ export const Home = () => {
         </Box>
       </Box>
       {filedListResult?.length ? (
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
           <Pagination
             count={totalPage}
             page={page}

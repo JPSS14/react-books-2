@@ -4,6 +4,8 @@ export const relatedBooksStyle: SxProps<Theme> = (theme) => {
   const { rbooks } = theme.palette;
   return {
     margin: `0 ${theme.spacing(4)}`,
+    maxWidth: "1536px",
+    height: "595px",
     ".related__header": {
       textAlign: "center",
       color: rbooks.primaryColor,
@@ -19,6 +21,7 @@ export const relatedBooksStyle: SxProps<Theme> = (theme) => {
       ".slick-track .slick-slide": {
         display: "flex",
         justifyContent: "center",
+        width: "100%",
       },
     },
   };

@@ -6,8 +6,17 @@ export const Favorites = () => {
   const { favoriteList } = useFavoriteContext();
   return (
     <Layout>
-      <Box component="main">
-        <SectionHeader title="Meus Favoritos" backToHome />
+      <Box
+        component="main"
+        sx={{
+          maxWidth: "1536px",
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          flexDirection: "column",
+        }}
+      >
+        <SectionHeader title="Meus Favoritos" backToHome noPaddingX />
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <CardList items={favoriteList} />
         </Box>

@@ -46,36 +46,47 @@ export const Book = () => {
 
   return (
     <Layout>
-      <Box component="main">
-        <SectionHeader title="Detalhes" backToHome />
-        {notFoundBook ? (
-          <NotFoundError />
-        ) : activeBookLoading || !activeBook ? (
-          <Box
-            sx={{
-              width: "100%",
-              height: "100vh",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Loading />
-          </Box>
-        ) : (
-          <>
-            <BookDetail item={activeBook} />
-          </>
-        )}
-        {author.items && !relatedBooksLoading ? (
-          <RelatedBooks items={author} />
-        ) : notFoundBook ? (
-          <></>
-        ) : (
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <Loading />
-          </Box>
-        )}
+      <Box
+        component="main"
+        sx={{
+          display: "flex",
+          justifyContent: activeBook ? "center" : "",
+          flexDirection: activeBook ? "column" : "row",
+          overflow: "hidden",
+          width: activeBook ? "auto" : "1536px",
+        }}
+      >
+        <Box sx={{ width: "100%" }}>
+          <SectionHeader title="Detalhes" backToHome />
+          {notFoundBook ? (
+            <NotFoundError />
+          ) : activeBookLoading || !activeBook ? (
+            <Box
+              sx={{
+                width: "100%",
+                height: "100vh",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Loading />
+            </Box>
+          ) : (
+            <>
+              <BookDetail item={activeBook} />
+            </>
+          )}
+          {author.items && !relatedBooksLoading ? (
+            <RelatedBooks items={author} />
+          ) : notFoundBook ? (
+            <></>
+          ) : (
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <Loading />
+            </Box>
+          )}
+        </Box>
       </Box>
     </Layout>
   );

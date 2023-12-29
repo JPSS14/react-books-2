@@ -5,6 +5,7 @@ export const bookDetailStyle: SxProps<Theme> = (theme) => {
   return {
     display: "flex",
     flexWrap: "wrap",
+    maxWidth: "1536px",
     color: rbooks.primaryColor,
     margin: `${theme.spacing(2)} ${theme.spacing(4)}`,
     padding: theme.spacing(2),

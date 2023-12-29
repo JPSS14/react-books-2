@@ -1,11 +1,13 @@
 import { Theme, SxProps } from "@mui/material";
 
 export const sectionHeaderStyle =
-  (backToHome?: boolean): SxProps<Theme> =>
+  (backToHome?: boolean, noPaddingX?: boolean): SxProps<Theme> =>
   (theme) => {
     const { rbooks } = theme.palette;
     return {
-      padding: theme.spacing(4),
+      padding: noPaddingX
+        ? `${theme.spacing(4)} ${theme.spacing(1)}`
+        : theme.spacing(4),
       display: "flex",
       alignItems: "center",
       width: "100%",
