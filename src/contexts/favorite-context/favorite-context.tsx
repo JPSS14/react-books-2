@@ -39,7 +39,9 @@ export const FavoriteContextProvider = ({
 
   const handleSaveFavorite = (book: BookItemResponseMapper) => {
     setFavoriteList([book, ...favoriteList]);
-    setFavoriteList((prev) => prev.slice(0, -1));
+    if (favoriteList[favoriteList.length - 1].volumeInfo.title === "") {
+      setFavoriteList((prev) => prev.slice(0, -1));
+    }
   };
 
   const handleDeleteFavorite = (book: BookItemResponseMapper) => {
