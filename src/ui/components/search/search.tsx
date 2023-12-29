@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import { Button, Input } from "ui/components";
 import { searchStyle } from "./Search.style";
@@ -8,9 +8,13 @@ import { useSearchContext } from "contexts/search-context/search-context";
 import { useNavigate } from "react-router-dom";
 
 export const Search = () => {
-  const { searchBook } = useSearchContext();
+  const { searchBook, searchedBookTitle } = useSearchContext();
   const history = useNavigate();
   const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    setSearch(searchedBookTitle);
+  }, [searchedBookTitle]);
 
   const inputEnter = (input: string) => {
     if (input === "Enter") {
@@ -34,6 +38,7 @@ export const Search = () => {
         onChange={(e) => setSearch(e.currentTarget.value)}
         onKeyUp={(e) => inputEnter(e.key)}
         placeholder="Encontre seu livro"
+        value={search}
       />
       <Button color="primary" onClick={() => searchBook(search)}>
         <SearchIcon />

@@ -27,7 +27,7 @@ export const Home = () => {
           {filedListResult?.length ? (
             <CardList items={filedListResult} />
           ) : (
-            <CardList items={defaultBooks} />
+            <CardList items={defaultBooks} defaultBooks />
           )}
         </Box>
       </Box>

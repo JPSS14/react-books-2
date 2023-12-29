@@ -22,6 +22,7 @@ type SearchContextData = {
   activeBook?: BookItemResponseMapper;
   setActiveBook: (book: BookItemResponseMapper) => void;
   searchBook: (search: string) => void;
+  searchedBookTitle: string;
 };
 
 export const SearchContext = createContext({} as SearchContextData);
@@ -41,6 +42,7 @@ export const SearchContextProvider = ({
     resultSearchBook.items || []
   );
   const [activeBook, setActiveBook] = useState<BookItemResponseMapper>();
+  const [searchedBookTitle, setSearchedBookTitle] = useState("");
   const isSmallScreen = useMediaQuery("(max-width:1265px)");
 
   const itemPerPage = isSmallScreen ? 6 : 8;
@@ -89,6 +91,7 @@ export const SearchContextProvider = ({
   };
 
   const searchBook = (search: string) => {
+    setSearchedBookTitle(search);
     if (search) {
       getSearch(search)
         .then((item) => {
@@ -110,6 +113,7 @@ export const SearchContextProvider = ({
         activeBook,
         setActiveBook,
         searchBook,
+        searchedBookTitle,
       }}
     >
       {children}

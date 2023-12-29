@@ -11,10 +11,11 @@ import { useSearchContext } from "contexts/search-context/search-context";
 interface CardCTAProps {
   item: BookItemResponseMapper;
   blank?: boolean;
+  defaultBooks?: boolean;
 }
 
-export const CardCTA = ({ item, blank }: CardCTAProps) => {
-  const { setActiveBook } = useSearchContext();
+export const CardCTA = ({ item, blank, defaultBooks }: CardCTAProps) => {
+  const { setActiveBook, searchBook } = useSearchContext();
   const { handleSaveFavorite, handleDeleteFavorite } = useFavoriteContext();
   const [isFavorite, setIsFavorite] = useState(false);
   const history = useNavigate();
@@ -42,6 +43,10 @@ export const CardCTA = ({ item, blank }: CardCTAProps) => {
     setActiveBook(item);
   };
 
+  const handleSearchBook = (search: string) => {
+    searchBook(search);
+  };
+
   const handleDiscover = () => {
     history("/react-books-2");
   };
@@ -52,12 +57,19 @@ export const CardCTA = ({ item, blank }: CardCTAProps) => {
         <Button color="primary" onClick={() => handleDiscover()}>
           Descobrir
         </Button>
+      ) : defaultBooks ? (
+        <Button
+          color="primary"
+          onClick={() => handleSearchBook(item.volumeInfo.title)}
+        >
+          Buscar
+        </Button>
       ) : (
         <Button color="primary" onClick={() => handleSeeMore(item)}>
           Ver mais
         </Button>
       )}
-      {blank ? (
+      {blank || defaultBooks ? (
         ""
       ) : isFavorite || item.favorite ? (
         <Box className="favorite__container">

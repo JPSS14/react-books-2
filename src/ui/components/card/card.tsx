@@ -10,9 +10,10 @@ import { CardFooter } from "./CardFooter";
 interface CardProps {
   item: BookItemResponseMapper;
   blank?: boolean;
+  defaultBooks?: boolean;
 }
 
-export const Card = ({ item, blank }: CardProps) => {
+export const Card = ({ item, blank, defaultBooks }: CardProps) => {
   return (
     <Box sx={CardContainerStyle} component="article">
       <CardHeader title={item.volumeInfo.title} blank={blank} />
@@ -22,8 +23,12 @@ export const Card = ({ item, blank }: CardProps) => {
           title={item.volumeInfo.title}
           blank={blank}
         />
-        <CardAmount price={item.saleInfo.listPrice?.amount} blank={blank} />
-        <CardCTA item={item} blank={blank} />
+        <CardAmount
+          price={item.saleInfo.listPrice?.amount}
+          blank={blank}
+          defaultBooks={defaultBooks}
+        />
+        <CardCTA item={item} blank={blank} defaultBooks={defaultBooks} />
       </Box>
       <CardFooter publisher={item.volumeInfo?.publisher} blank={blank} />
     </Box>
