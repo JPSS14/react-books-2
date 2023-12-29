@@ -24,6 +24,7 @@ export const Book = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0 });
     if (!activeBook && id) {
       setActiveBookLoading(true);
       getByBookID(id)
