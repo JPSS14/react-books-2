@@ -23,6 +23,14 @@ export const relatedBooksStyle: SxProps<Theme> = (theme) => {
         justifyContent: "center",
         width: "100%",
       },
+      "& .slick-next::before": {
+        color: rbooks.primaryColor,
+        fontSize: "1.5rem",
+      },
+      "& .slick-prev::before": {
+        color: rbooks.primaryColor,
+        fontSize: "1.5rem",
+      },
     },
   };
 };
