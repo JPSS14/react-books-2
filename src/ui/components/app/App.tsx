@@ -6,7 +6,7 @@ export const App = () => {
   const isLocalhost =
     window.location.hostname === "localhost" ||
     window.location.hostname === "127.0.0.1";
-  const basename = isLocalhost ? "/" : "/react-books-2";
+  const basename = isLocalhost ? "/" : "/react-books-2/";
 
   return (
     <RBooksThemeProvider>
