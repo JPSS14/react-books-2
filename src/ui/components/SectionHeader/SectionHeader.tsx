@@ -17,7 +17,7 @@ export const SectionHeader = ({
   const history = useNavigate();
 
   const handleBackToDashboard = () => {
-    history("/react-books-2");
+    history("/");
   };
   return (
     <Box sx={sectionHeaderStyle(backToHome, noPaddingX)}>

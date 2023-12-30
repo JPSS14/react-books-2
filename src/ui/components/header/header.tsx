@@ -7,7 +7,7 @@ export const Header = () => {
     <Box sx={headerContainerStyle} component="header">
       <Box component="nav">
         <Typography component="h1">
-          <Link to="/react-books-2">
+          <Link to="/">
             React <Box component="span">Books</Box> 2
           </Link>
         </Typography>

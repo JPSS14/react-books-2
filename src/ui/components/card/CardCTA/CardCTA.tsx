@@ -48,7 +48,7 @@ export const CardCTA = ({ item, blank, defaultBooks }: CardCTAProps) => {
   };
 
   const handleDiscover = () => {
-    history("/react-books-2");
+    history("/");
   };
 
   return (
