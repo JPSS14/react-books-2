@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-books-2/static/css/main.29a6fc67.css",
-    "main.js": "/react-books-2/static/js/main.5a020c48.js",
+    "main.js": "/react-books-2/static/js/main.f2bf258b.js",
     "static/js/787.558a8ad1.chunk.js": "/react-books-2/static/js/787.558a8ad1.chunk.js",
     "static/media/han-solo.jpg": "/react-books-2/static/media/han-solo.a91f5b099fde80f634eb.jpg",
     "static/media/slick.svg": "/react-books-2/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -10,11 +10,11 @@
     "static/media/slick.woff": "/react-books-2/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/react-books-2/index.html",
     "main.29a6fc67.css.map": "/react-books-2/static/css/main.29a6fc67.css.map",
-    "main.5a020c48.js.map": "/react-books-2/static/js/main.5a020c48.js.map",
+    "main.f2bf258b.js.map": "/react-books-2/static/js/main.f2bf258b.js.map",
     "787.558a8ad1.chunk.js.map": "/react-books-2/static/js/787.558a8ad1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.29a6fc67.css",
-    "static/js/main.5a020c48.js"
+    "static/js/main.f2bf258b.js"
   ]
 }
