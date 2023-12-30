@@ -7,7 +7,7 @@ export const App = () => {
     <RBooksThemeProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/react-books-2/" element={<Home />} />
+          <Route path="/react-books-2" element={<Home />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/book/:id" element={<Book />} />
         </Routes>
