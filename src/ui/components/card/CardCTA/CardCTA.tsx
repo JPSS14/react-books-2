@@ -39,7 +39,7 @@ export const CardCTA = ({ item, blank, defaultBooks }: CardCTAProps) => {
   };
 
   const handleSeeMore = (item: BookItemResponseMapper) => {
-    history(`/book/${item.id}`);
+    history(`/react-books-2/book/${item.id}`);
     setActiveBook(item);
   };
 
