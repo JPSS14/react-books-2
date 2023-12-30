@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 export const App = () => {
   return (
     <RBooksThemeProvider>
-      <BrowserRouter basename="/">
+      <BrowserRouter basename="/react-books-2/">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/favorites" element={<Favorites />} />
