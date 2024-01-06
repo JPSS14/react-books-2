@@ -17,6 +17,6 @@ describe("Header component", () => {
     const link = screen.getByRole("link", { name: /React Books 2/ });
 
     expect(screen.getByText(/React/)).toBeInTheDocument();
-    expect(link).toHaveAttribute("href", "/react-books-2");
+    expect(link).toHaveAttribute("href", "/");
   });
 });
