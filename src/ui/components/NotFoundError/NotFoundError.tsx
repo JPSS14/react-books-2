@@ -8,7 +8,7 @@ export const NotFoundError = () => {
   const history = useNavigate();
 
   const handleBackToHome = () => {
-    history("/react-books-2");
+    history("/");
   };
   return (
     <Box component="article" sx={notFoundErrorStyle}>
