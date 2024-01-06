@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <Box sx={FooterContainerStyle} component="footer">
       <Typography component="h1">
-        <Link to="/react-books-2">
+        <Link to="/">
           React <Box component="span">Books</Box> 2
         </Link>
       </Typography>

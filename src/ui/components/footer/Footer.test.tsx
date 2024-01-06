@@ -18,6 +18,6 @@ describe("Footer", () => {
     const link = screen.getByRole("link", { name: "React Books 2" });
 
     expect(footerRender).toBeInTheDocument();
-    expect(link).toHaveAttribute("href", "/react-books-2");
+    expect(link).toHaveAttribute("href", "/");
   });
 });
