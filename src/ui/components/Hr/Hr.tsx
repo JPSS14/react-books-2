@@ -6,5 +6,5 @@ interface hrProps {
 }
 
 export const Hr = ({ isMargin }: hrProps) => {
-  return <Divider sx={hrStyle(isMargin)} />;
+  return <Divider sx={hrStyle(isMargin)} data-testid="Hr" />;
 };
