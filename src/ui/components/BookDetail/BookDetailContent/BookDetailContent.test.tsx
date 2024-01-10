@@ -55,7 +55,7 @@ describe("BookDetailContent", () => {
     const renderAuthor = screen.getByText("Tolkien");
     const renderPublishedDate = screen.getByText("14/02/1999");
     const withPublisher = screen.getByText("Galera");
-    const withDescription = screen.getByAltText("Descrição do livro");
+    const withDescription = screen.getByText("Descrição do livro");
 
     expect(renderAuthor).toBeInTheDocument();
     expect(renderPublishedDate).toBeInTheDocument();
