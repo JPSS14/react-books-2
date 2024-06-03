@@ -55,7 +55,19 @@ export const FavoriteContextProvider = ({
   useEffect(() => {
     const favoritesStorage = getLocalStorage("favorites");
     if (favoritesStorage?.length) {
-      setFavoriteList(favoritesStorage);
+      let favoriteBook = 0;
+      let blankBooks = 0;
+      favoritesStorage.map((item) =>
+        item.id !== "" ? favoriteBook++ : blankBooks++
+      );
+      if (favoriteBook >= 8 && blankBooks > 1) {
+        setFavoriteList(favoritesStorage.slice(0, favoriteBook + 1));
+      } else if (favoriteBook < 8) {
+        setFavoriteList(favoritesStorage.slice(0, 8));
+      } else {
+        favoritesStorage.push(blankBook);
+        setFavoriteList(favoritesStorage);
+      }
     }
   }, []);
 

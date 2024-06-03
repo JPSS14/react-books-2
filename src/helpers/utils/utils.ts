@@ -1,4 +1,4 @@
-import { ResponseBooksMapper } from "service/types";
+import { BookItemResponseMapper, ResponseBooksMapper } from "service/types";
 
 export const dateConverter = (date: string) => {
   const newDate = new Date(date);
@@ -30,7 +30,9 @@ export const removeRepeatedBook = (
   };
 };
 
-export const getLocalStorage = (key: string): [] | null => {
+export const getLocalStorage = (
+  key: string
+): BookItemResponseMapper[] | null => {
   const data = window.localStorage.getItem(key);
 
   return JSON.parse(data!);
