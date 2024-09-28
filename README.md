@@ -4,6 +4,7 @@
 ![Last Commit](https://img.shields.io/github/last-commit/jpss14/react-books-2)
 ![GitHubissues](https://img.shields.io/github/issues/jpss14/react-books-2)
 ![GitHub Stars](https://img.shields.io/github/stars/jpss14/react-books-2)
+![GitHub License](https://img.shields.io/github/license/jpss14/react-books-2)
 
 Este projeto é uma nova versão do [React Books](https://github.com/JPSS14/react-books), desemvolvido com novas tecnologias e técnicas que aprendi e venho estudando. Consiste em um buscador de livros onde o usuário tem a opção de favoritar o livro, ler uma amostra ou até mesmo ser redirecionado para comprá-lo.
 
